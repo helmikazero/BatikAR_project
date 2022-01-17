@@ -18,19 +18,18 @@ public class ModelPlacement : MonoBehaviour
         public string deskripsi;
         public Sprite[] thumbnail;
         public GameObject[] batikPrefab;
+        [Space(3)]
         public GameObject[] spawnedBatikModel;
     }
 
     public BajuList[] batikList;
-
-    
 
 
     public RectTransform UIBajuDetailPanel;
 
     [Header("UI Prefabs")]
     public GameObject UIBajuListPrefab;
-    public GameObject ColorSelection;
+    public GameObject ColorSelectionButtonPrefab;
 
 
     [Header("Window Animation")]
@@ -75,8 +74,29 @@ public class ModelPlacement : MonoBehaviour
 
     public void CHOOSEBATIK(int index)
     {
+        selectedBatik = index;
+
         UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikList[index].name;
         UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikList[index].deskripsi;
+
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikList[index].thumbnail[0];
+        selectedColor = 0;
+
+        for(int i = 0; i < colorListSpot.childCount; i++)
+        {
+            colorListSpot.GetChild(i).gameObject.SetActive(false);
+        }
+
+
+        for(int i = 0; i < batikList[index].thumbnail.Length; i++)
+        {
+            /*GameObject spawnedColorSelectButton = Instantiate(ColorSelectionButtonPrefab, colorListSpot);*/
+
+            GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject;
+            spawnedColorSelectButton.GetComponent<Image>().sprite = batikList[index].thumbnail[i];
+            spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(i));
+
+        }
 
 
         UIBajuDetailPanel.gameObject.SetActive(true);
@@ -92,4 +112,19 @@ public class ModelPlacement : MonoBehaviour
 
         selectedColor = index;
     }
+
+    public void DEPLOY_MANEKIN()
+    {
+        for(int i = 0; i < modelSpot.childCount; i++)
+        {
+            modelSpot.GetChild(0).gameObject.SetActive(false);
+        }
+
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
+    }
+
+    /*public void DEPLOY_COBA()
+    {
+
+    }*/
 }
