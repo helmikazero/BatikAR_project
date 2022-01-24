@@ -121,10 +121,29 @@ public class ModelPlacement : MonoBehaviour
         }
 
         batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(false);
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(true);
+
+        UIBajuDetailPanel.DOScale(0.3f, durationMove);
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(()=> UIBajuDetailPanel.gameObject.SetActive(false));
+
+        GameObject.FindObjectOfType<BatikMenuUISlide>().GetComponent<BatikMenuUISlide>().CLOSE_PANEL();
     }
 
-    /*public void DEPLOY_COBA()
+    public void DEPLOY_COBA()
     {
+        for (int i = 0; i < modelSpot.childCount; i++)
+        {
+            modelSpot.GetChild(0).gameObject.SetActive(false);
+        }
 
-    }*/
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(true);
+        batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(false);
+
+        UIBajuDetailPanel.DOScale(0.3f, durationMove);
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
+
+        GameObject.FindObjectOfType<BatikMenuUISlide>().GetComponent<BatikMenuUISlide>().CLOSE_PANEL();
+    }
 }
