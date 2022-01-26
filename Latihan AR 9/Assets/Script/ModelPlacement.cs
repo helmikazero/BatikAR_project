@@ -17,7 +17,7 @@ public class ModelPlacement : MonoBehaviour
         public string name;
         public string deskripsi;
         public Sprite[] thumbnail;
-        public GameObject[] batikPrefab;
+        /*public GameObject[] batikPrefab;*/
         [Space(3)]
         public GameObject[] spawnedBatikModel;
     }
@@ -33,8 +33,8 @@ public class ModelPlacement : MonoBehaviour
 
 
     [Header("Window Animation")]
-    public Vector2 moveFrom;
-    public Vector2 moveTo;
+    /*public Vector2 moveFrom;
+    public Vector2 moveTo;*/
     public float durationMove;
 
     /*[Header("Color Window Animation")]
@@ -49,20 +49,25 @@ public class ModelPlacement : MonoBehaviour
     {
         for(int i = 0; i < batikList.Length; i++)
         {
-            for(int j = 0; j < batikList[i].batikPrefab.Length; j++)
+            for(int j = 0; j < batikList[i].spawnedBatikModel.Length; j++)
             {
-                batikList[i].spawnedBatikModel[j] = Instantiate(batikList[i].batikPrefab[j],modelSpot).gameObject;
+                /*batikList[i].spawnedBatikModel[j] = Instantiate(batikList[i].batikPrefab[j],modelSpot).gameObject;
                 batikList[i].spawnedBatikModel[j].transform.localPosition = Vector3.zero;
-                batikList[i].spawnedBatikModel[j].transform.localRotation = Quaternion.Euler(Vector3.zero);
+                batikList[i].spawnedBatikModel[j].transform.localRotation = Quaternion.Euler(Vector3.zero);*/
                 batikList[i].spawnedBatikModel[j].SetActive(false);
             }
 
             GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot);
             spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikList[i].name;
             spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikList[i].thumbnail[0];
-            spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(i));
+            int batikIndexNew = i;
+            spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew));
 
         }
+
+        UIBajuDetailPanel.DOScale(0.3f, durationMove);
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
+
     }
 
     // Update is called once per frame
@@ -74,7 +79,11 @@ public class ModelPlacement : MonoBehaviour
 
     public void CHOOSEBATIK(int index)
     {
+
+        Debug.Log("Choose batik selected");
         selectedBatik = index;
+        Debug.Log("the output is =" + index.ToString());
+        
 
         UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikList[index].name;
         UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikList[index].deskripsi;
@@ -94,13 +103,16 @@ public class ModelPlacement : MonoBehaviour
 
             GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject;
             spawnedColorSelectButton.GetComponent<Image>().sprite = batikList[index].thumbnail[i];
-            spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(i));
+            spawnedColorSelectButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            int newInt = i;
+            spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt));
+            spawnedColorSelectButton.SetActive(true);
 
         }
 
 
         UIBajuDetailPanel.gameObject.SetActive(true);
-        UIBajuDetailPanel.DOScale(1f,durationMove).From(0.5f);
+        UIBajuDetailPanel.DOScale(1f, durationMove).From(0.5f);
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);
 
 
@@ -108,6 +120,7 @@ public class ModelPlacement : MonoBehaviour
 
     public void CHOOSECOLOR(int index)
     {
+        Debug.Log("choose color yes");
         UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikList[selectedBatik].thumbnail[index];
 
         selectedColor = index;
@@ -117,7 +130,7 @@ public class ModelPlacement : MonoBehaviour
     {
         for(int i = 0; i < modelSpot.childCount; i++)
         {
-            modelSpot.GetChild(0).gameObject.SetActive(false);
+            modelSpot.GetChild(i).gameObject.SetActive(false);
         }
 
         batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
@@ -134,7 +147,7 @@ public class ModelPlacement : MonoBehaviour
     {
         for (int i = 0; i < modelSpot.childCount; i++)
         {
-            modelSpot.GetChild(0).gameObject.SetActive(false);
+            modelSpot.GetChild(i).gameObject.SetActive(false);
         }
 
         batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
@@ -145,5 +158,12 @@ public class ModelPlacement : MonoBehaviour
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
 
         GameObject.FindObjectOfType<BatikMenuUISlide>().GetComponent<BatikMenuUISlide>().CLOSE_PANEL();
+    }
+
+
+    public void CLOSE_DETAIL()
+    {
+        UIBajuDetailPanel.DOScale(0.3f, durationMove);
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
     }
 }
