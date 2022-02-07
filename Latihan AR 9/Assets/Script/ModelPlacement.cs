@@ -11,21 +11,21 @@ public class ModelPlacement : MonoBehaviour
     public int selectedBatik = 0;
     public int selectedColor = 0;
 
-    [System.Serializable]
+    /*[System.Serializable]
     public class BajuList
     {
         public string name;
         public string deskripsi;
         public Sprite[] thumbnail;
-        /*public GameObject[] batikPrefab;*/
+
         [Space(3)]
         public GameObject[] spawnedBatikModel;
     }
 
-    public BajuList[] batikList;
+    public BajuList[] batikList;*/
 
 
-    public RectTransform UIBajuDetailPanel;
+    /*public RectTransform UIBajuDetailPanel;
 
     [Header("UI Prefabs")]
     public GameObject UIBajuListPrefab;
@@ -33,16 +33,11 @@ public class ModelPlacement : MonoBehaviour
 
 
     [Header("Window Animation")]
-    /*public Vector2 moveFrom;
-    public Vector2 moveTo;*/
     public float durationMove;
-
-    /*[Header("Color Window Animation")]
-    public Vector2 moveFrom;*/
 
 
     public Transform listSpot;
-    public Transform colorListSpot;
+    public Transform colorListSpot;*/
 
     // Start is called before the first frame update
     void Start()
@@ -51,9 +46,6 @@ public class ModelPlacement : MonoBehaviour
         {
             for(int j = 0; j < batikList[i].spawnedBatikModel.Length; j++)
             {
-                /*batikList[i].spawnedBatikModel[j] = Instantiate(batikList[i].batikPrefab[j],modelSpot).gameObject;
-                batikList[i].spawnedBatikModel[j].transform.localPosition = Vector3.zero;
-                batikList[i].spawnedBatikModel[j].transform.localRotation = Quaternion.Euler(Vector3.zero);*/
                 batikList[i].spawnedBatikModel[j].SetActive(false);
             }
 
