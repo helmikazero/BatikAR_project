@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102203342}
+      - m_Target: {fileID: 456913114}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: DEPLOY_MANEKIN
         m_Mode: 1
@@ -518,6 +518,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71079091}
   m_CullTransparentMesh: 1
+--- !u!1 &74658634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74658635}
+  - component: {fileID: 74658636}
+  m_Layer: 0
+  m_Name: BATIK_DATABASE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74658635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74658634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 102203343}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &74658636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74658634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6950c20d4166acd45a62cb046151017c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batikList:
+  - name: Semarangan
+    deskripsi: Batik dari semarang mantap gan h3h3h3h3
+    thumbnail:
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    spawnedBatikModel:
+    - {fileID: 919731927736034374}
+    - {fileID: 7785083518539578498}
+    - {fileID: 76133383}
+  - name: Jogja
+    deskripsi: Batik dari jogja h3h3h3h3
+    thumbnail:
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    - {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+    spawnedBatikModel:
+    - {fileID: 240277085}
+    - {fileID: 250583281}
+    - {fileID: 543728923}
 --- !u!1 &76133383
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,57 +623,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102203343}
-  - component: {fileID: 102203342}
-  - component: {fileID: 102203344}
   m_Layer: 0
-  m_Name: MODELPLACEMENT_SYS
+  m_Name: SCRIPTING_SYSTEM_CENTER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &102203342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102203341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769d072188a6ae3419425d17715cab8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modelSpot: {fileID: 1525246152}
-  selectedBatik: 0
-  selectedColor: 0
-  batikList:
-  - name: Batik A
-    deskripsi: Batik mantap dari negeri A
-    thumbnail:
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    spawnedBatikModel:
-    - {fileID: 919731927736034374}
-    - {fileID: 7785083518539578498}
-    - {fileID: 76133383}
-  - name: Batik B
-    deskripsi: Batik mantap dari negeri B
-    thumbnail:
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    - {fileID: 21300000, guid: 1d9ef641bdedb884bb96221b791c26ff, type: 3}
-    spawnedBatikModel:
-    - {fileID: 240277085}
-    - {fileID: 250583281}
-    - {fileID: 543728923}
-  UIBajuDetailPanel: {fileID: 340368187}
-  UIBajuListPrefab: {fileID: 5032544683968424709, guid: 01255a4b2e2209f4f972c8a7d7837ce6, type: 3}
-  ColorSelectionButtonPrefab: {fileID: 4068032614524428917, guid: b7e2e8a00c84c9549b917f2014e86f42, type: 3}
-  durationMove: 0.5
-  listSpot: {fileID: 452207069}
-  colorListSpot: {fileID: 450066493}
 --- !u!4 &102203343
 Transform:
   m_ObjectHideFlags: 0
@@ -620,25 +640,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 401.1045, y: 983.6616, z: -1478.0004}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 456913115}
+  - {fileID: 2036726718}
+  - {fileID: 74658635}
+  - {fileID: 2074593369}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &102203344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102203341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ae08d4aafde1e4bb3c7768539f30ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  batikPanel: {fileID: 1789869282}
-  smoothDuration: 0.5
-  listOpened: 0
 --- !u!1 &119587648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1548,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102203344}
+      - m_Target: {fileID: 2074593370}
         m_TargetAssemblyTypeName: BatikMenuUISlide, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -1703,9 +1712,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102203342}
-        m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
-        m_MethodName: CLOSE_DETAIL
+      - m_Target: {fileID: 2036726719}
+        m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
+        m_MethodName: CLOSE_DETAILWINDOW
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2487,6 +2496,54 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &456913113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456913115}
+  - component: {fileID: 456913114}
+  m_Layer: 0
+  m_Name: MODEL_PLACEMENT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &456913114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456913113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769d072188a6ae3419425d17715cab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelSpot: {fileID: 1525246152}
+  selectedBatik: 0
+  selectedColor: 0
+  batikDatabse: {fileID: 74658636}
+  batikListOrginizer: {fileID: 2036726719}
+--- !u!4 &456913115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456913113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 102203343}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463930438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8848,7 +8905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102203342}
+      - m_Target: {fileID: 456913114}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: DEPLOY_COBA
         m_Mode: 1
@@ -9355,6 +9412,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026645464}
   m_CullTransparentMesh: 1
+--- !u!1 &2036726717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036726718}
+  - component: {fileID: 2036726719}
+  m_Layer: 0
+  m_Name: BATIK_LIST
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2036726718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036726717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 102203343}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036726719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036726717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e200cde42d36c440bff223e41f9df98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIBajuDetailPanel: {fileID: 340368187}
+  UIBajuListPrefab: {fileID: 5032544683968424709, guid: 01255a4b2e2209f4f972c8a7d7837ce6, type: 3}
+  ColorSelectionButtonPrefab: {fileID: 4068032614524428917, guid: b7e2e8a00c84c9549b917f2014e86f42, type: 3}
+  durationMove: 0.5
+  listSpot: {fileID: 452207069}
+  colorListSpot: {fileID: 450066493}
+  batikDatabase: {fileID: 74658636}
+  modelPlacement: {fileID: 456913114}
+--- !u!1 &2074593368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074593369}
+  - component: {fileID: 2074593370}
+  m_Layer: 0
+  m_Name: BATIK_SLIDER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074593369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074593368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 102203343}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074593370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074593368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ae08d4aafde1e4bb3c7768539f30ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batikPanel: {fileID: 1789869282}
+  smoothDuration: 0.5
+  listOpened: 0
 --- !u!1 &2104812041
 GameObject:
   m_ObjectHideFlags: 0

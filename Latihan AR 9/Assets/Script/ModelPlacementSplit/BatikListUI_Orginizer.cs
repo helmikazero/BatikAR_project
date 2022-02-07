@@ -6,13 +6,13 @@ using DG.Tweening;
 
 public class BatikListUI_Orginizer : MonoBehaviour
 {
-    public RectTransform UIBajuDetailPanel;
+    public RectTransform UIBajuDetailPanel; //UI Detail Baju
     [Header("UI Prefabs")]
-    public GameObject UIBajuListPrefab;
-    public GameObject ColorSelectionButtonPrefab;
+    public GameObject UIBajuListPrefab; //Template Tombol Batik di list
+    public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
 
     [Header("Window Animation")]
-    public float durationMove;
+    public float durationMove; //Kecepatan smoothing UI
 
 
     public Transform listSpot;
@@ -22,24 +22,25 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
     [Header("Dependencies")]
-    public BatikDatabase bdb;
-    public ModelPlacement mdlplc;
+    public BatikDatabase batikDatabase; //Script database nyimpen batik
+    public ModelPlacement modelPlacement; //Posisi titik batik
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < bdb.batikList.Length; i++)
+        for (int i = 0; i < batikDatabase.batikList.Length; i++)
         {
-            for (int j = 0; j < bdb.batikList[i].spawnedBatikModel.Length; j++)
+            for (int j = 0; j < batikDatabase.batikList[i].spawnedBatikModel.Length; j++)
             {
-                bdb.batikList[i].spawnedBatikModel[j].SetActive(false);
+                batikDatabase.batikList[i].spawnedBatikModel[j].SetActive(false); //Ngenonaktifin semua batik biar tersembunyi semua
             }
 
-            GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot);
-            spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = bdb.batikList[i].name;
-            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = bdb.batikList[i].thumbnail[0];
-            int batikIndexNew = i;
-            spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew));
+            
+            GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Ngespawn tombol UI batik
+            spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[i].name; //Nge update nama batik di tombol
+            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikDatabase.batikList[i].thumbnail[0]; //Ngisi thumbnail pakai gambar batik pertama
+            int batikIndexNew = i; 
+            spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew)); //Masang fungsi tombol untuk milih batik kalau mencet tombol batik
 
         }
 
@@ -58,48 +59,62 @@ public class BatikListUI_Orginizer : MonoBehaviour
     {
 
         Debug.Log("Choose batik selected");
-        mdlplc.selectedBatik = index;
+        
         Debug.Log("the output is =" + index.ToString());
 
+        modelPlacement.selectedBatik = index; //Ngisi jenis batik yang akan di deploy
 
-        UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = bdb.batikList[index].name;
-        UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = bdb.batikList[index].deskripsi;
 
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = bdb.batikList[index].thumbnail[0];
-        mdlplc.selectedColor = 0;
+        UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[index].name; //Ngeupdate nama
+        UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikDatabase.batikList[index].deskripsi; //Ngeupdate detail untuk deskrpsi
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
 
-        for (int i = 0; i < colorListSpot.childCount; i++)
+        modelPlacement.selectedColor = 0; //Ngedefault jenis warnanya langsung warna pertama 
+
+        for (int i = 0; i < colorListSpot.childCount; i++) //Nyembunyiin semua tombol warna sebelum diatur ulang lagi
         {
             colorListSpot.GetChild(i).gameObject.SetActive(false);
         }
 
 
-        for (int i = 0; i < bdb.batikList[index].thumbnail.Length; i++)
+        for (int i = 0; i < batikDatabase.batikList[index].thumbnail.Length; i++)
         {
-            /*GameObject spawnedColorSelectButton = Instantiate(ColorSelectionButtonPrefab, colorListSpot);*/
 
-            GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject;
-            spawnedColorSelectButton.GetComponent<Image>().sprite = bdb.batikList[index].thumbnail[i];
-            spawnedColorSelectButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject; //Ngambil tombol warna yang udh ada
+            spawnedColorSelectButton.GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[i]; //Ngeupdate gambar tombol sesuai batik
+            spawnedColorSelectButton.GetComponent<Button>().onClick.RemoveAllListeners(); //Ngehapus semua fungsi tombol biar seko 0
             int newInt = i;
-            spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt));
-            spawnedColorSelectButton.SetActive(true);
+            spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt)); //Masang fungsi milih warna
+            spawnedColorSelectButton.SetActive(true); //Munculin tombol
 
         }
 
+        OPEN_DETAILPANEL();
+    }
 
-        UIBajuDetailPanel.gameObject.SetActive(true);
-        UIBajuDetailPanel.DOScale(1f, durationMove).From(0.5f);
-        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);
-
-
+    public void OPEN_DETAILPANEL()
+    {
+        UIBajuDetailPanel.gameObject.SetActive(true); //dari tidak ada jadi muncul
+        UIBajuDetailPanel.DOScale(1f, durationMove).From(0.5f); //dari kecil ke besar
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f); //dari ilang ke muncul warna pelan2
     }
 
     public void CHOOSECOLOR(int index)
     {
         Debug.Log("choose color yes");
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = bdb.batikList[mdlplc.selectedBatik].thumbnail[index];
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
 
-        mdlplc.selectedColor = index;
+        modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
+    }
+
+    public void CLOSE_DETAILWINDOW()
+    {
+        UIBajuDetailPanel.DOScale(0.3f, durationMove);
+        UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
+    }
+
+    public void CLOSE_LISTWINDOW()
+    {
+        GameObject.FindObjectOfType<BatikMenuUISlide>().GetComponent<BatikMenuUISlide>().CLOSE_PANEL();
     }
 }
