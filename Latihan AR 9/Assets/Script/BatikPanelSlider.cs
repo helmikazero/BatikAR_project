@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class BatikMenuUISlide : MonoBehaviour
+public class BatikPanelSlider : MonoBehaviour
 {
     public RectTransform batikPanel;
     public float smoothDuration = 0.5f;

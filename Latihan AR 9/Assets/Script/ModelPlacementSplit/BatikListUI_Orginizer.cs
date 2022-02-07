@@ -115,6 +115,6 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
     public void CLOSE_LISTWINDOW()
     {
-        GameObject.FindObjectOfType<BatikMenuUISlide>().GetComponent<BatikMenuUISlide>().CLOSE_PANEL();
+        GameObject.FindObjectOfType<BatikPanelSlider>().GetComponent<BatikPanelSlider>().CLOSE_PANEL();
     }
 }
