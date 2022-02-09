@@ -30,15 +30,15 @@ public class BatikListUI_Orginizer : MonoBehaviour
     {
         for (int i = 0; i < batikDatabase.batikList.Length; i++)
         {
-            for (int j = 0; j < batikDatabase.batikList[i].spawnedBatikModel.Length; j++)
+           /* for (int j = 0; j < batikDatabase.batikList[i].spawnedBatikModel.Length; j++)
             {
                 batikDatabase.batikList[i].spawnedBatikModel[j].SetActive(false); //Ngenonaktifin semua batik biar tersembunyi semua
-            }
+            }*/
 
             
             GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Ngespawn tombol UI batik
             spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[i].name; //Nge update nama batik di tombol
-            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikDatabase.batikList[i].thumbnail[0]; //Ngisi thumbnail pakai gambar batik pertama
+            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().material = batikDatabase.batikList[i].tempMaterialUI[0]; //Ngisi thumbnail pakai gambar batik pertama
             int batikIndexNew = i; 
             spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew)); //Masang fungsi tombol untuk milih batik kalau mencet tombol batik
 
