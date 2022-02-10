@@ -67,7 +67,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[index].name; //Ngeupdate nama
         UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikDatabase.batikList[index].deskripsi; //Ngeupdate detail untuk deskrpsi
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[index].tempMaterialUI[0]; //Ngeupdate detail untuk thumbnail
 
         modelPlacement.selectedColor = 0; //Ngedefault jenis warnanya langsung warna pertama 
 
@@ -77,11 +77,11 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
 
 
-        for (int i = 0; i < batikDatabase.batikList[index].thumbnail.Length; i++)
+        for (int i = 0; i < batikDatabase.batikList[index].tempMaterialUI.Length; i++)
         {
 
             GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject; //Ngambil tombol warna yang udh ada
-            spawnedColorSelectButton.GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[i]; //Ngeupdate gambar tombol sesuai batik
+            spawnedColorSelectButton.GetComponent<Image>().material = batikDatabase.batikList[index].tempMaterialUI[i]; //Ngeupdate gambar tombol sesuai batik
             spawnedColorSelectButton.GetComponent<Button>().onClick.RemoveAllListeners(); //Ngehapus semua fungsi tombol biar seko 0
             int newInt = i;
             spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt)); //Masang fungsi milih warna
@@ -102,7 +102,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void CHOOSECOLOR(int index)
     {
         Debug.Log("choose color yes");
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[modelPlacement.selectedBatik].tempMaterialUI[index]; //waktu mencet warna, thumbnail batik diganti warna
 
         modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
     }
