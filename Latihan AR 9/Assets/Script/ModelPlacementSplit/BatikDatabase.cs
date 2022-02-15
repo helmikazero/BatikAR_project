@@ -33,17 +33,4 @@ public class BatikDatabase : MonoBehaviour
             }
         }
     }*/
-
-    private void Awake()
-    {
-        for (int i = 0; i < batikList.Length; i++)
-        {
-            for (int j = 0; j < batikList[i].batikMat.Length; j++)
-            {
-                Material newUIMat = batikList[i].batikMat[j];
-                newUIMat.shader = Shader.Find("Sprites/Default");
-                batikList[i].tempMaterialUI[j] = newUIMat;
-            }
-        }
-    }
 }

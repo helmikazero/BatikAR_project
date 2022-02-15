@@ -94,6 +94,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
     public void OPEN_DETAILPANEL()
     {
+
         UIBajuDetailPanel.gameObject.SetActive(true); //dari tidak ada jadi muncul
         UIBajuDetailPanel.DOScale(1f, durationMove).From(0.5f); //dari kecil ke besar
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f); //dari ilang ke muncul warna pelan2

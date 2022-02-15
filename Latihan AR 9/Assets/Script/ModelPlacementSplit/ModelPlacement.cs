@@ -26,22 +26,36 @@ public class ModelPlacement : MonoBehaviour
 
     private void Update()
     {
-        manekinEssential.SetActive(manekinEssential);
+        manekinEssential.SetActive(isManekin);
         lenganPanjang.SetActive(isLenganPanjang);
 
-        SET_MATERIAL(batikUtama, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
-        SET_MATERIAL(lenganPanjang, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
+        /*SET_MATERIAL(batikUtama, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
+        SET_MATERIAL(lenganPanjang, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);*/
 
         
     }
 
+    public void TOGGLE_SLEEVE()
+    {
+        isLenganPanjang = !isLenganPanjang;
+    }
+
     public void SET_MATERIAL(GameObject theObject,int matElement, Material newMaterial)
     {
-        theObject.GetComponent<MeshRenderer>().materials[matElement] = newMaterial;
+        MeshRenderer targetMeshRenderer = theObject.GetComponent<MeshRenderer>();
+        Material[] targetMaterials = targetMeshRenderer.materials;
+
+        targetMaterials[matElement] = newMaterial;
+
+        targetMeshRenderer.materials = targetMaterials;
+
+        Debug.Log("OBJECT NAME =" + theObject.name + "MAT ELEMENT =" + matElement + " NEW MATERIAL=" + newMaterial.name);
+        /*theObject.GetComponent<MeshRenderer>().materials[matElement] = newMaterial;*/
     }
 
     public void DEPLOY_MANEKIN()
     {
+        Debug.Log("Deploy manekin");
         /*for(int i = 0; i < modelSpot.childCount; i++)
         {
             modelSpot.GetChild(i).gameObject.SetActive(false);
@@ -53,6 +67,9 @@ public class ModelPlacement : MonoBehaviour
 
         isManekin = true;
 
+        SET_MATERIAL(batikUtama, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
+        SET_MATERIAL(lenganPanjang, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
+
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
 
@@ -60,6 +77,8 @@ public class ModelPlacement : MonoBehaviour
 
     public void DEPLOY_COBA()
     {
+
+        Debug.Log("Deploy COBA");
         /*for (int i = 0; i < modelSpot.childCount; i++)
         {
             modelSpot.GetChild(i).gameObject.SetActive(false);
@@ -70,6 +89,9 @@ public class ModelPlacement : MonoBehaviour
         batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(false);*/
 
         isManekin = false;
+
+        SET_MATERIAL(batikUtama, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
+        SET_MATERIAL(lenganPanjang, 0, batikDatabse.batikList[selectedBatik].batikMat[selectedColor]);
 
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
