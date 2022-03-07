@@ -30,19 +30,26 @@ public class ModelPlacement : MonoBehaviour
     {
         for (int i = 0; i < batikDatabse.batikList.Length; i++)
         {
-            for(int j = 0; j < batikDatabse.batikList[i].spawnedBatikModel.Length; i++)
+            for(int j = 0; j < batikDatabse.batikList[i].spawnedBatikModel.Length; j++)
             {
                 batikDatabse.batikList[i].spawnedBatikModel[j].SetActive(false);
             }
         }
 
         batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(false);
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(true);
+        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(isLenganPanjang);
+        /*batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(true);*/
 
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
 
+    }
+
+    public void TOGGLE_LENGAN()
+    {
+        isLenganPanjang = !isLenganPanjang;
+
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR(isLenganPanjang);
     }
 
 }

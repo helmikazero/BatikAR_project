@@ -25,6 +25,12 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public BatikDatabase batikDatabase; //Script database nyimpen batik
     public ModelPlacement modelPlacement; //Posisi titik batik
 
+
+    [Header("Lengan ON/OFF")]
+    public Image lenganOnOffButton;
+    public Sprite lenganIsOn;
+    public Sprite lenganIsOff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +44,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
             
             GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Ngespawn tombol UI batik
             spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[i].name; //Nge update nama batik di tombol
-            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikDatabase.batikList[i].thumbnail[0]; //Ngisi thumbnail pakai gambar batik pertama
+            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().material = batikDatabase.batikList[i].thumbnail[0]; //Ngisi thumbnail pakai gambar batik pertama
             int batikIndexNew = i; 
             spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew)); //Masang fungsi tombol untuk milih batik kalau mencet tombol batik
 
@@ -67,7 +73,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[index].name; //Ngeupdate nama
         UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikDatabase.batikList[index].deskripsi; //Ngeupdate detail untuk deskrpsi
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
 
         modelPlacement.selectedColor = 0; //Ngedefault jenis warnanya langsung warna pertama 
 
@@ -81,7 +87,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         {
 
             GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject; //Ngambil tombol warna yang udh ada
-            spawnedColorSelectButton.GetComponent<Image>().sprite = batikDatabase.batikList[index].thumbnail[i]; //Ngeupdate gambar tombol sesuai batik
+            spawnedColorSelectButton.GetComponent<Image>().material = batikDatabase.batikList[index].thumbnail[i]; //Ngeupdate gambar tombol sesuai batik
             spawnedColorSelectButton.GetComponent<Button>().onClick.RemoveAllListeners(); //Ngehapus semua fungsi tombol biar seko 0
             int newInt = i;
             spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt)); //Masang fungsi milih warna
@@ -102,7 +108,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void CHOOSECOLOR(int index)
     {
         Debug.Log("choose color yes");
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().sprite = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
+        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
 
         modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
     }
@@ -116,5 +122,17 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void CLOSE_LISTWINDOW()
     {
         GameObject.FindObjectOfType<BatikPanelSlider>().GetComponent<BatikPanelSlider>().CLOSE_PANEL();
+    }
+
+    public void SET_TOGGLELENGAN_COLOR(bool isLenganPanjang)
+    {
+        if (isLenganPanjang)
+        {
+            lenganOnOffButton.sprite = lenganIsOn;
+        }
+        else
+        {
+            lenganOnOffButton.sprite = lenganIsOff;
+        }
     }
 }

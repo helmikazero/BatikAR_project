@@ -9,7 +9,7 @@ public class BatikDatabase : MonoBehaviour
     {
         public string name;
         public string deskripsi;
-        public Sprite[] thumbnail;
+        public Material[] thumbnail;
 
         [Space(3)]
         public GameObject[] spawnedBatikModel;
