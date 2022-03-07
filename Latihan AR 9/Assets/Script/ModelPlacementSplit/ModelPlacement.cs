@@ -11,19 +11,29 @@ public class ModelPlacement : MonoBehaviour
     public int selectedBatik = 0;
     public int selectedColor = 0;
 
+    public bool isManekin;
+    public GameObject manekinUtil;
+
+    public bool isLenganPanjang;
 
     [Header("Dependencies")]
     public BatikDatabase batikDatabse;
     public BatikListUI_Orginizer batikListOrginizer;
 
 
-
-
-    public void DEPLOY_MANEKIN()
+    private void Update()
     {
-        for(int i = 0; i < modelSpot.childCount; i++)
+        manekinUtil.SetActive(isManekin);
+    }
+
+    public void DEPLOY()
+    {
+        for (int i = 0; i < batikDatabse.batikList.Length; i++)
         {
-            modelSpot.GetChild(i).gameObject.SetActive(false);
+            for(int j = 0; j < batikDatabse.batikList[i].spawnedBatikModel.Length; i++)
+            {
+                batikDatabse.batikList[i].spawnedBatikModel[j].SetActive(false);
+            }
         }
 
         batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
@@ -33,21 +43,6 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
 
-    }
-
-    public void DEPLOY_COBA()
-    {
-        for (int i = 0; i < modelSpot.childCount; i++)
-        {
-            modelSpot.GetChild(i).gameObject.SetActive(false);
-        }
-
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(true);
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(false);
-
-        batikListOrginizer.CLOSE_DETAILWINDOW();
-        batikListOrginizer.CLOSE_LISTWINDOW();
     }
 
 }
