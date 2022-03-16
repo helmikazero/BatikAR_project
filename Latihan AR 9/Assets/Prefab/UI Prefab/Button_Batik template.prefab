@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3689, y: 69.136284}
-  m_SizeDelta: {x: 382.2644, y: 261.7274}
+  m_AnchoredPosition: {x: 0.00028753, y: 74.292}
+  m_SizeDelta: {x: 327.07, y: 222.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5032544683639726303
 CanvasRenderer:
@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7637024, y: -145.69672}
-  m_SizeDelta: {x: -68.7656, y: -270.9404}
+  m_AnchoredPosition: {x: 0, y: -115.36}
+  m_SizeDelta: {x: -147.1002, y: -331.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5032544683795262682
 CanvasRenderer:
@@ -141,19 +141,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 4ba00a011fe504c438d487b7f207c016, type: 3}
+    m_FontSize: 55
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 60
+    m_MaxSize: 65
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Batik Semarang
+  m_Text: Batik Warag Ngendog
 --- !u!1 &5032544683853169935
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 630, y: 630}
+  m_AnchoredPosition: {x: -0.000026703, y: 0.000053402}
+  m_SizeDelta: {x: 474.17, y: 487.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5032544683853169928
 CanvasRenderer:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e70ec3b8ce91d0c4b87e3c44b05b4c91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c087f56d77ac8924897ce2b23d3b0bfe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
