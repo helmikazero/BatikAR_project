@@ -71,9 +71,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.selectedBatik = index; //Ngisi jenis batik yang akan di deploy
 
 
-        UIBajuDetailPanel.GetChild(0).GetComponent<Text>().text = batikDatabase.batikList[index].name; //Ngeupdate nama
-        UIBajuDetailPanel.GetChild(1).GetComponent<Text>().text = batikDatabase.batikList[index].deskripsi; //Ngeupdate detail untuk deskrpsi
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
+        UIBajuDetailPanel.GetChild(2).GetComponent<Text>().text = batikDatabase.batikList[index].name; //Ngeupdate nama
+        UIBajuDetailPanel.GetChild(3).GetComponent<Text>().text = batikDatabase.batikList[index].deskripsi; //Ngeupdate detail untuk deskrpsi
+        UIBajuDetailPanel.GetChild(4).GetComponent<Image>().material = batikDatabase.batikList[index].thumbnail[0]; //Ngeupdate detail untuk thumbnail
 
         modelPlacement.selectedColor = 0; //Ngedefault jenis warnanya langsung warna pertama 
 
