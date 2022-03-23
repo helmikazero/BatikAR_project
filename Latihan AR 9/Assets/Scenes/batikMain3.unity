@@ -11109,9 +11109,14 @@ MonoBehaviour:
   colorListSpot: {fileID: 2490053556975768667}
   batikDatabase: {fileID: 74658636}
   modelPlacement: {fileID: 456913114}
-  lenganOnOffButton: {fileID: 261073598}
+  lenganOnOffButton:
+  - {fileID: 2490053557162723032}
   lenganIsOn: {fileID: 21300000, guid: a10423691c065984eb75aa9af7f00cd3, type: 3}
   lenganIsOff: {fileID: 21300000, guid: a88bcb05df47ff2449684dc3374dd01c, type: 3}
+  manekinOnOffButton:
+  - {fileID: 2490053556379949584}
+  manekinIsOn: {fileID: 21300000, guid: a10423691c065984eb75aa9af7f00cd3, type: 3}
+  manekinIsOff: {fileID: 21300000, guid: a88bcb05df47ff2449684dc3374dd01c, type: 3}
 --- !u!1001 &2056680365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15141,9 +15146,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 456913114}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
-        m_MethodName: TOGGLE_LENGAN
+        m_MethodName: TOGGLE_MANEKIN
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15784,7 +15789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35ccbd7024e701c4b8be39d8c5bcdfda, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16458,7 +16463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 456913114}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_LENGAN
         m_Mode: 1
