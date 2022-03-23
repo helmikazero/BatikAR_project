@@ -16,7 +16,9 @@ public class DropDownMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        isOpen = false;
+
+        dropMenu.anchoredPosition = new Vector3(0, dropMenu.rect.height, 0);
     }
 
     // Update is called once per frame
