@@ -27,19 +27,24 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
     [Header("Lengan ON/OFF")]
-    public Image lenganOnOffButton;
+    public Image[] lenganOnOffButton;
     public Sprite lenganIsOn;
     public Sprite lenganIsOff;
+
+    [Header("Manekin ON/OFF")]
+    public Image[] manekinOnOffButton;
+    public Sprite manekinIsOn;
+    public Sprite manekinIsOff;
 
     // Start is called before the first frame update
     void Start()
     {
         for (int i = 0; i < batikDatabase.batikList.Length; i++)
         {
-            for (int j = 0; j < batikDatabase.batikList[i].spawnedBatikModel.Length; j++)
+            /*for (int j = 0; j < batikDatabase.batikList[i].spawnedBatikModel.Length; j++)
             {
                 batikDatabase.batikList[i].spawnedBatikModel[j].SetActive(false); //Ngenonaktifin semua batik biar tersembunyi semua
-            }
+            }*/
 
             
             GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Ngespawn tombol UI batik
@@ -107,9 +112,10 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
     public void CHOOSECOLOR(int index)
     {
-        Debug.Log("choose color yes");
-        UIBajuDetailPanel.GetChild(2).GetComponent<Image>().material = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
-
+        Debug.Log("choose color yes =" + index);
+        Material targetMaterial = UIBajuDetailPanel.GetChild(5).GetComponent<Image>().material;
+        UIBajuDetailPanel.GetChild(4).GetComponent<Image>().material = batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index]; //waktu mencet warna, thumbnail batik diganti warna
+        Debug.Log(batikDatabase.batikList[modelPlacement.selectedBatik].thumbnail[index].name);
         modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
     }
 
@@ -128,11 +134,35 @@ public class BatikListUI_Orginizer : MonoBehaviour
     {
         if (isLenganPanjang)
         {
-            lenganOnOffButton.sprite = lenganIsOn;
+            for(int i = 0; i < manekinOnOffButton.Length; i++)
+            {
+                lenganOnOffButton[i].sprite = lenganIsOn;
+            }
         }
         else
         {
-            lenganOnOffButton.sprite = lenganIsOff;
+            for (int i = 0; i < manekinOnOffButton.Length; i++)
+            {
+                lenganOnOffButton[i].sprite = lenganIsOff;
+            }
+        }
+    }
+
+    public void SET_TOGGLEMANEKIN(bool isManekin)
+    {
+        if (isManekin)
+        {
+            for(int i= 0; i< manekinOnOffButton.Length; i++)
+            {
+                manekinOnOffButton[i].sprite = lenganIsOn;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < manekinOnOffButton.Length; i++)
+            {
+                manekinOnOffButton[i].sprite = lenganIsOff;
+            }
         }
     }
 }

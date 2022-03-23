@@ -10,9 +10,11 @@ public class BatikDatabase : MonoBehaviour
         public string name;
         public string deskripsi;
         public Material[] thumbnail;
+        public Material[] batikTexture;
 
         [Space(3)]
-        public GameObject[] spawnedBatikModel;
+        public GameObject batikGameObject;
+
     }
 
     public BajuList[] batikList;
