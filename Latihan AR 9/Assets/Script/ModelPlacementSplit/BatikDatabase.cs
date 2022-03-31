@@ -11,7 +11,7 @@ public class BatikDatabase : MonoBehaviour
         public Material[] materialSet;
     }
 
-    [System.Serializable]
+   /* [System.Serializable]
     public class BajuList
     {
         public string name;
@@ -24,7 +24,7 @@ public class BatikDatabase : MonoBehaviour
         [Space(3)]
         public GameObject batikGameObject;
 
-    }
+    }*/
 
 
     [System.Serializable]
@@ -32,15 +32,15 @@ public class BatikDatabase : MonoBehaviour
     {
         public string name;
         public string deskripsi;
+
+
+
         public batikColorSet[] colorSets;
-
-
-
         [Space(3)]
         public GameObject batikGameObject;
     }
 
-    public BajuList[] batikList;
+    /*public BajuList[] batikList;*/
 
     public BajuListBaru[] bajuListBaru;
 }

@@ -26,11 +26,15 @@ public class ModelPlacement : MonoBehaviour
         manekinUtil.SetActive(isManekin);
 
 
+        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
 
-        SET_MATERIAL(batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(0).gameObject, 0, batikDatabse.batikList[selectedBatik].batikTexture[selectedColor]);
+        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
+
+        /*SET_MATERIAL(batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(0).gameObject, 0, batikDatabse.batikList[selectedBatik].batikTexture[selectedColor]);
         SET_MATERIAL(batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(1).gameObject, 0, batikDatabse.batikList[selectedBatik].batikTexture[selectedColor]);
 
-        batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
+        batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);*/
     }
 
     public void SET_MATERIAL(GameObject theObject, int matElement, Material newMaterial)
@@ -48,17 +52,17 @@ public class ModelPlacement : MonoBehaviour
 
     public void DEPLOY()
     {
-        for (int i = 0; i < batikDatabse.batikList.Length; i++)
+        for (int i = 0; i < batikDatabse.bajuListBaru.Length; i++)
         {
 
-            batikDatabse.batikList[i].batikGameObject.SetActive(false);
+            batikDatabse.bajuListBaru[i].batikGameObject.SetActive(false);
             /*for(int j = 0; j < batikDatabse.batikList[i].spawnedBatikModel.Length; j++)
             {
                 batikDatabse.batikList[i].spawnedBatikModel[j].SetActive(false);
             }*/
         }
 
-        batikDatabse.batikList[selectedBatik].batikGameObject.SetActive(true);
+        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);
 
         /*batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
         batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(isLenganPanjang);*/
