@@ -9,7 +9,9 @@ public class ModelPlacement : MonoBehaviour
     public Transform modelSpot;
 
     public int selectedBatik = 0;
+    public int targetSelectedBatik = 0;
     public int selectedColor = 0;
+    public int targetSelectedColor = 0;
 
     public bool isManekin;
     public GameObject manekinUtil;
@@ -25,11 +27,38 @@ public class ModelPlacement : MonoBehaviour
     {
         manekinUtil.SetActive(isManekin);
 
+        if (batikDatabse.bajuListBaru[selectedBatik].isLenganUnique)
+        {
+            for(int i = 0; i < batikDatabse.bajuListBaru[selectedBatik].colorObjectSet.Length; i++)
+            {
+                if(i == selectedColor)
+                {
+                    if (isLenganPanjang)
+                    {
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(false); //matiin yang lengan pendek
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(true); //nyalain yang lengan panjang
+                    }
+                    else
+                    {
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(true); //nyalain yang lengan pendek
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(false); //matiin yang lengan panjang
+                    }
 
-        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
-        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+                    continue;
+                }
 
-        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
+                batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].SetActive(false);
+                //HASIL LOOP = ngematiin semua set warna batik yang ngk kepilih dan ngeset lengan panjang atau pendek
+            }
+        }
+        else
+        {
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
+
+        }
 
         /*SET_MATERIAL(batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(0).gameObject, 0, batikDatabse.batikList[selectedBatik].batikTexture[selectedColor]);
         SET_MATERIAL(batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(1).gameObject, 0, batikDatabse.batikList[selectedBatik].batikTexture[selectedColor]);
@@ -64,10 +93,6 @@ public class ModelPlacement : MonoBehaviour
 
         batikDatabse.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);
 
-        /*batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].SetActive(true);
-        batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(0).gameObject.SetActive(isLenganPanjang);*/
-
-        /*batikDatabse.batikList[selectedBatik].spawnedBatikModel[selectedColor].transform.GetChild(1).gameObject.SetActive(true);*/
 
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
