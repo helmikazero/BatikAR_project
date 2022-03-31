@@ -19,7 +19,7 @@ public class ModelPlacement : MonoBehaviour
     public bool isLenganPanjang;
 
     [Header("Dependencies")]
-    public BatikDatabase batikDatabse;
+    public BatikDatabase batikBase;
     public BatikListUI_Orginizer batikListOrginizer;
 
 
@@ -81,9 +81,10 @@ public class ModelPlacement : MonoBehaviour
 
     public void DEPLOY()
     {
-        
 
-        batikDatabse.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);
+        UPDATE_BATIK();
+
+        /*batikBase.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);*/
 
 
         batikListOrginizer.CLOSE_DETAILWINDOW();
@@ -91,42 +92,56 @@ public class ModelPlacement : MonoBehaviour
 
     }
 
-    public void TOGGLE_LENGAN(Image tombolObject)
+    public void TOGGLE_LENGAN()
     {
         isLenganPanjang = !isLenganPanjang;
-
-        batikListOrginizer.SET_TOGGLELENGAN_COLOR(isLenganPanjang,tombolObject);
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
-    public void TOGGLE_LENGAN_INSTANT(Image tombolObject)
+    public void TOGGLE_LENGAN_INSTANT()
     {
         isLenganPanjang = !isLenganPanjang;
-
-        batikListOrginizer.SET_TOGGLELENGAN_COLOR(isLenganPanjang, tombolObject);
-
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
         UPDATE_BATIK();
     }
 
 
-    public void TOGGLE_MANEKIN(Image tombolManekin)
+    public void TOGGLE_MANEKIN()
     {
         isManekin = !isManekin;
-
-        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR(isManekin, tombolManekin);
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
     }
 
-    public void TOGGLE_MANEKIN_INSTANT(Image tombolManekin)
+    public void TOGGLE_MANEKIN_INSTANT()
     {
         isManekin = !isManekin;
-
-        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR(isManekin, tombolManekin);
-
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
         UPDATE_BATIK();
     }
-
 
 
     public void UPDATE_BATIK()
+    {
+        for(int i=0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            if(i != selectedBatik)
+            {
+                for(int j = 0; j < batikBase.bajuListBaru[i].batikColorSets.Length; j++)
+                {
+                    batikBase.bajuListBaru[i].batikColorSets[j].batikColorObjects.SetActive(false);
+                }
+                continue;
+            }
+
+            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].withLenganSet.SetActive(isLenganPanjang);
+            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].noLenganSet.SetActive(!isLenganPanjang);
+
+            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].kerahforManekin.SetActive(isManekin);
+
+        }
+    }
+
+    /*public void UPDATE_BATIK()
     {
         
         for (int i = 0; i < batikDatabse.bajuListBaru.Length; i++)
@@ -174,6 +189,6 @@ public class ModelPlacement : MonoBehaviour
             }
 
         }
-    }
+    }*/
 
 }

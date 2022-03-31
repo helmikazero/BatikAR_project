@@ -5,49 +5,46 @@ using UnityEngine;
 public class BatikDatabase : MonoBehaviour
 {
     [System.Serializable]
-    public class batikColorSet
+    public class BatikColorSet
     {
-        public Material thumbnail;
-        public Material[] materialSet;
+        public Sprite thumbnail;
+        public GameObject batikColorObjects;
+
+        [Space(2)]
+        public GameObject kerahforManekin;
+        public GameObject withLenganSet;
+        public GameObject noLenganSet;
+
+        public void SetUtils()
+        {
+            kerahforManekin = batikColorObjects.transform.GetChild(0).gameObject;
+            withLenganSet = batikColorObjects.transform.GetChild(1).gameObject;
+            noLenganSet = batikColorObjects.transform.GetChild(2).gameObject;
+        }
     }
 
-   /* [System.Serializable]
+
+    [System.Serializable]
     public class BajuList
     {
         public string name;
         public string deskripsi;
-        public Material[] thumbnail;
-        public Material[] batikTexture;
 
 
-
-        [Space(3)]
-        public GameObject batikGameObject;
-
-    }*/
-
-
-    [System.Serializable]
-    public class BajuListBaru
-    {
-        public string name;
-        public string deskripsi;
-
-        public bool isLenganUnique;
-
-        
-        [Space(3)]
-        public GameObject batikGameObject;
-
-        //Untuk lengan texture tidak unik
-        public batikColorSet[] colorSets;
-
-        //Untuk lengan texture unik
-        public GameObject[] colorObjectSet;
-
+        public BatikColorSet[] batikColorSets;
     }
 
-    /*public BajuList[] batikList;*/
+    public BajuList[] bajuListBaru;
 
-    public BajuListBaru[] bajuListBaru;
+
+    private void Start()
+    {
+        for(int i = 0; i < bajuListBaru.Length; i++)
+        {
+            for(int j = 0; j < bajuListBaru[i].batikColorSets.Length; j++)
+            {
+                bajuListBaru[i].batikColorSets[j].SetUtils();
+            }
+        }
+    }
 }
