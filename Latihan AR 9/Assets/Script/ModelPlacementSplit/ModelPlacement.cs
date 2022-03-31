@@ -113,4 +113,40 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.SET_TOGGLEMANEKIN(isManekin);
     }
 
+    public void UPDATE_BATIK()
+    {
+        if (batikDatabse.bajuListBaru[selectedBatik].isLenganUnique)
+        {
+            for (int i = 0; i < batikDatabse.bajuListBaru[selectedBatik].colorObjectSet.Length; i++)
+            {
+                if (i == selectedColor)
+                {
+                    if (isLenganPanjang)
+                    {
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(false); //matiin yang lengan pendek
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(true); //nyalain yang lengan panjang
+                    }
+                    else
+                    {
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(true); //nyalain yang lengan pendek
+                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(false); //matiin yang lengan panjang
+                    }
+
+                    continue;
+                }
+
+                batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].SetActive(false);
+                //HASIL LOOP = ngematiin semua set warna batik yang ngk kepilih dan ngeset lengan panjang atau pendek
+            }
+        }
+        else
+        {
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
+
+            batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
+
+        }
+    }
+
 }
