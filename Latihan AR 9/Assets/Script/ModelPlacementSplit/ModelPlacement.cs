@@ -66,7 +66,7 @@ public class ModelPlacement : MonoBehaviour
         batikDatabse.batikList[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);*/
     }
 
-    public void SET_MATERIAL(GameObject theObject, int matElement, Material newMaterial)
+    /*public void SET_MATERIAL(GameObject theObject, int matElement, Material newMaterial)
     {
         MeshRenderer targetMeshRenderer = theObject.GetComponent<MeshRenderer>();
         Material[] targetMaterials = targetMeshRenderer.materials;
@@ -76,8 +76,8 @@ public class ModelPlacement : MonoBehaviour
         targetMeshRenderer.materials = targetMaterials;
 
         Debug.Log("OBJECT NAME =" + theObject.name + "MAT ELEMENT =" + matElement + " NEW MATERIAL=" + newMaterial.name);
-        /*theObject.GetComponent<MeshRenderer>().materials[matElement] = newMaterial;*/
-    }
+        *//*theObject.GetComponent<MeshRenderer>().materials[matElement] = newMaterial;*//*
+    }*/
 
     public void DEPLOY()
     {
