@@ -35,11 +35,12 @@ public class BatikDatabase : MonoBehaviour
 
         public bool isLenganUnique;
 
-        //Untuk lengan texture tidak unik
-        public batikColorSet[] colorSets;
+        
         [Space(3)]
         public GameObject batikGameObject;
 
+        //Untuk lengan texture tidak unik
+        public batikColorSet[] colorSets;
 
         //Untuk lengan texture unik
         public GameObject[] colorObjectSet;

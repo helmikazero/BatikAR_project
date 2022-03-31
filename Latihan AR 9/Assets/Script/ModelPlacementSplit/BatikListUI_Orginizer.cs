@@ -27,12 +27,12 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
     [Header("Lengan ON/OFF")]
-    public Image[] lenganOnOffButton;
+    /*public Image[] lenganOnOffButton;*/
     public Sprite lenganIsOn;
     public Sprite lenganIsOff;
 
     [Header("Manekin ON/OFF")]
-    public Image[] manekinOnOffButton;
+    /*public Image[] manekinOnOffButton;*/
     public Sprite manekinIsOn;
     public Sprite manekinIsOff;
 
@@ -119,6 +119,13 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
     }
 
+    public void CHOOSECOLOR_INSTANT(int index)
+    {
+        Debug.Log("choose color yes =" + index);
+        modelPlacement.selectedColor = index;
+        modelPlacement.UPDATE_BATIK();
+    }
+
     public void CLOSE_DETAILWINDOW()
     {
         UIBajuDetailPanel.DOScale(0.3f, durationMove);
@@ -130,39 +137,27 @@ public class BatikListUI_Orginizer : MonoBehaviour
         GameObject.FindObjectOfType<BatikPanelSlider>().GetComponent<BatikPanelSlider>().CLOSE_PANEL();
     }
 
-    public void SET_TOGGLELENGAN_COLOR(bool isLenganPanjang)
+    public void SET_TOGGLELENGAN_COLOR(bool isLenganPanjang, Image tombolToggleLengan)
     {
         if (isLenganPanjang)
         {
-            for(int i = 0; i < manekinOnOffButton.Length; i++)
-            {
-                lenganOnOffButton[i].sprite = lenganIsOn;
-            }
+            tombolToggleLengan.sprite = lenganIsOn;
         }
         else
         {
-            for (int i = 0; i < manekinOnOffButton.Length; i++)
-            {
-                lenganOnOffButton[i].sprite = lenganIsOff;
-            }
+            tombolToggleLengan.sprite = lenganIsOff;
         }
     }
 
-    public void SET_TOGGLEMANEKIN(bool isManekin)
+    public void SET_TOGGLEMANEKIN_COLOR(bool isManekin, Image tombolToggleManekin)
     {
         if (isManekin)
         {
-            for(int i= 0; i< manekinOnOffButton.Length; i++)
-            {
-                manekinOnOffButton[i].sprite = lenganIsOn;
-            }
+            tombolToggleManekin.sprite = lenganIsOn;
         }
         else
         {
-            for (int i = 0; i < manekinOnOffButton.Length; i++)
-            {
-                manekinOnOffButton[i].sprite = lenganIsOff;
-            }
+            tombolToggleManekin.sprite = lenganIsOff;
         }
     }
 }
