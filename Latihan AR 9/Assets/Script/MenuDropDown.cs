@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BigDropDown : MonoBehaviour
+public class MenuDropDown : MonoBehaviour
 {
     public float fadeSpeed = 1f;
 

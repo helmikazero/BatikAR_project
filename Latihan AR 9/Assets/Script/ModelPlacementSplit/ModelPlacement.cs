@@ -136,7 +136,7 @@ public class ModelPlacement : MonoBehaviour
             batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].withLenganSet.SetActive(isLenganPanjang);
             batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].noLenganSet.SetActive(!isLenganPanjang);
 
-            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].kerahforManekin.SetActive(isManekin);
+            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].kerahForManekin.SetActive(isManekin);
 
         }
     }

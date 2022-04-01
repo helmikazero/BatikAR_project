@@ -10,16 +10,16 @@ public class BatikDatabase : MonoBehaviour
         public Sprite thumbnail;
         public GameObject batikColorObjects;
 
-        [Space(2)]
-        public GameObject kerahforManekin;
+        [Header("Batik Utils - harus Urut di GameObject nya")]
+        public GameObject kerahForManekin;
         public GameObject withLenganSet;
         public GameObject noLenganSet;
 
         public void SetUtils()
         {
-            kerahforManekin = batikColorObjects.transform.GetChild(0).gameObject;
-            withLenganSet = batikColorObjects.transform.GetChild(1).gameObject;
-            noLenganSet = batikColorObjects.transform.GetChild(2).gameObject;
+            if(kerahForManekin == null) kerahForManekin = batikColorObjects.transform.GetChild(0).gameObject;
+            if(withLenganSet == null) withLenganSet = batikColorObjects.transform.GetChild(1).gameObject;
+            if(noLenganSet == null) noLenganSet = batikColorObjects.transform.GetChild(2).gameObject;
         }
     }
 
@@ -27,9 +27,14 @@ public class BatikDatabase : MonoBehaviour
     [System.Serializable]
     public class BajuList
     {
-        public string name;
-        public string deskripsi;
-
+        public string name = "New Batik";
+        public string deskripsi = "Description here...";
+        public string warnaDasar = "Biru, Merah, Hijau";
+        public string ukuranTersedia = "S,M,L,XL";
+        public string jenisKain = "Mori";
+        public string asalDaerah = "Jawa Tengah, Semarang";
+        public string teknikProduksi = "Batik Tulis";
+        public string caraPerawatan = "Hindari penggunaan pemutih dalam mencuci kain karena dapat merusak bahan dari kain";
 
         public BatikColorSet[] batikColorSets;
     }

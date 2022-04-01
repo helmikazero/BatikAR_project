@@ -16,7 +16,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
     public Transform listSpot;
-    public Transform colorListSpot;
+    public Transform[] colorListSpot;
 
 
 
@@ -78,17 +78,36 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         UIBajuDetailPanel.GetChild(2).GetComponent<Text>().text = batikBase.bajuListBaru[index].name; //Ngeupdate nama
         UIBajuDetailPanel.GetChild(3).GetComponent<Text>().text = batikBase.bajuListBaru[index].deskripsi; //Ngeupdate detail untuk deskrpsi
+        Debug.Log("rename dan deskripsi selesai");
         UIBajuDetailPanel.GetChild(4).GetComponent<Image>().sprite = batikBase.bajuListBaru[index].batikColorSets[0].thumbnail; //Ngeupdate detail untuk thumbnail
 
         modelPlacement.selectedColor = 0; //Ngedefault jenis warnanya langsung warna pertama 
 
-        for (int i = 0; i < colorListSpot.childCount; i++) //Nyembunyiin semua tombol warna sebelum diatur ulang lagi
+        /*for (int i = 0; i < colorListSpot.childCount; i++) //Nyembunyiin semua tombol warna sebelum diatur ulang lagi
         {
             colorListSpot.GetChild(i).gameObject.SetActive(false);
+        }*/
+        Debug.Log("selesai select color");
+        for (int i = 0; i < colorListSpot.Length; i++)
+        {
+            Debug.Log("iteras color List Spot =" + i);
+            for(int j = 0; j < colorListSpot[i].childCount; j++)
+            {
+                Debug.Log("iteras child Color List =" + j + " dengan i ="+i);
+                if (j < batikBase.bajuListBaru[index].batikColorSets.Length)
+                {
+                    colorListSpot[i].GetChild(j).GetComponent<Image>().sprite = batikBase.bajuListBaru[index].batikColorSets[i].thumbnail;
+                    colorListSpot[i].GetChild(j).gameObject.SetActive(true);
+                }
+                else
+                {
+                    colorListSpot[i].GetChild(j).gameObject.SetActive(false);
+                }
+            }
         }
 
 
-        for (int i = 0; i < batikBase.bajuListBaru[index].batikColorSets.Length; i++)
+        /*for (int i = 0; i < batikBase.bajuListBaru[index].batikColorSets.Length; i++)
         {
 
             GameObject spawnedColorSelectButton = colorListSpot.GetChild(i).gameObject; //Ngambil tombol warna yang udh ada
@@ -98,7 +117,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
             spawnedColorSelectButton.GetComponent<Button>().onClick.AddListener(() => CHOOSECOLOR(newInt)); //Masang fungsi milih warna
             spawnedColorSelectButton.SetActive(true); //Munculin tombol
 
-        }
+        }*/
 
         OPEN_DETAILPANEL();
     }
@@ -192,4 +211,17 @@ public class BatikListUI_Orginizer : MonoBehaviour
             tombolToggleManekin.sprite = lenganIsOff;
         }
     }*/
+
+    public void SMALLPOP_MENU(GameObject popMenuObject)
+    {
+        if (!popMenuObject.activeSelf)
+        {
+            popMenuObject.SetActive(true);
+            popMenuObject.GetComponent<CanvasGroup>().DOFade(1f, durationMove*0.5f).From(0f);
+        }
+        else
+        {
+            popMenuObject.GetComponent<CanvasGroup>().DOFade(0f, durationMove * 0.5f).OnComplete(()=> popMenuObject.SetActive(false));
+        }
+    }
 }
