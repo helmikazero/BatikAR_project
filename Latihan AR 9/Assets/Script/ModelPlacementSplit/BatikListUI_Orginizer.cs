@@ -57,6 +57,8 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         UIBajuDetailPanel.DOScale(0.3f, durationMove);
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
+
+        SET_COLOR_BUTTON(modelPlacement.selectedBatik);
     }
 
     // Update is called once per frame
@@ -87,24 +89,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         {
             colorListSpot.GetChild(i).gameObject.SetActive(false);
         }*/
-        Debug.Log("selesai select color");
-        for (int i = 0; i < colorListSpot.Length; i++)
-        {
-            Debug.Log("iteras color List Spot =" + i);
-            for(int j = 0; j < colorListSpot[i].childCount; j++)
-            {
-                Debug.Log("iteras child Color List =" + j + " dengan i ="+i);
-                if (j < batikBase.bajuListBaru[index].batikColorSets.Length)
-                {
-                    colorListSpot[i].GetChild(j).GetComponent<Image>().sprite = batikBase.bajuListBaru[index].batikColorSets[i].thumbnail;
-                    colorListSpot[i].GetChild(j).gameObject.SetActive(true);
-                }
-                else
-                {
-                    colorListSpot[i].GetChild(j).gameObject.SetActive(false);
-                }
-            }
-        }
+        SET_COLOR_BUTTON(modelPlacement.selectedBatik);
 
 
         /*for (int i = 0; i < batikBase.bajuListBaru[index].batikColorSets.Length; i++)
@@ -120,7 +105,40 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }*/
 
         OPEN_DETAILPANEL();
+
+        
     }
+
+    void SET_COLOR_BUTTON(int index)
+    {
+        Debug.Log("selesai select color");
+        for (int i = 0; i < colorListSpot.Length; i++)
+        {
+            Debug.Log("iteras color List Spot =" + i);
+            Debug.Log("Name of colorList Object" + colorListSpot[i].name);
+            for (int j = 0; j < colorListSpot[i].childCount; j++)
+            {
+                Debug.Log("i = " + i + " j = " + j);
+                Debug.Log("Index =" + index + " batikBase.bajuListBaru[index].batikColorSets.Length = " + batikBase.bajuListBaru[index].batikColorSets.Length + " j = " + j);
+                if (j < batikBase.bajuListBaru[index].batikColorSets.Length)
+                {
+                    Debug.Log("Name of color button Object" + colorListSpot[i].GetChild(j).name);
+                    Debug.Log("ganti warna dan dinyalain");
+
+                    colorListSpot[i].GetChild(j).GetComponent<Image>().sprite = batikBase.bajuListBaru[index].batikColorSets[j].thumbnail;
+                    colorListSpot[i].GetChild(j).gameObject.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log("ini di mmatiin");
+                    colorListSpot[i].GetChild(j).gameObject.SetActive(false);
+                }
+
+                Debug.Log("i = " + i + " j = " + j + "ENDING ITERASI");
+            }
+        }
+    }
+
 
     public void OPEN_DETAILPANEL()
     {
@@ -157,6 +175,17 @@ public class BatikListUI_Orginizer : MonoBehaviour
     }
 
 
+    public void SET_TOGGLELENGAN_COLOR_THISONLY(Image thebutton)
+    {
+        if (modelPlacement.isLenganPanjang)
+        {
+            thebutton.sprite = lenganIsOn;
+        }
+        else
+        {
+            thebutton.sprite = lenganIsOff;
+        }
+    }
 
     public void SET_TOGGLELENGAN_COLOR()
     {
@@ -171,6 +200,18 @@ public class BatikListUI_Orginizer : MonoBehaviour
                 lenganOnOffButton[i].sprite = lenganIsOff;
             }
         } 
+    }
+
+    public void SET_TOGGLEMANEKIN_COLOR_THISONLY(Image thebutton)
+    {
+        if (modelPlacement.isManekin)
+        {
+            thebutton.sprite = manekinIsOn;
+        }
+        else
+        {
+           thebutton.sprite = manekinIsOff;
+        }
     }
 
     public void SET_TOGGLEMANEKIN_COLOR()
@@ -222,6 +263,14 @@ public class BatikListUI_Orginizer : MonoBehaviour
         else
         {
             popMenuObject.GetComponent<CanvasGroup>().DOFade(0f, durationMove * 0.5f).OnComplete(()=> popMenuObject.SetActive(false));
+        }
+    }
+
+    public void SMALLPOP_CLOSE(GameObject popMenuObject)
+    {
+        if (popMenuObject.activeSelf)
+        {
+            popMenuObject.GetComponent<CanvasGroup>().DOFade(0f, durationMove * 0.5f).OnComplete(() => popMenuObject.SetActive(false));
         }
     }
 }

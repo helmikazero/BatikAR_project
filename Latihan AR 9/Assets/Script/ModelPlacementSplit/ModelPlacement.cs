@@ -9,23 +9,29 @@ public class ModelPlacement : MonoBehaviour
     public Transform modelSpot;
 
     public int selectedBatik = 0;
-    /*public int targetSelectedBatik = 0;*/
+    public int previousSelectedBatik = 0;
     public int selectedColor = 0;
-    /*public int targetSelectedColor = 0;*/
+    public int previousSelectedColor = 0;
 
+    public bool isPreviousManekin;
     public bool isManekin;
     public GameObject manekinUtil;
 
+    public bool isPreviousLenganPanjang;
     public bool isLenganPanjang;
 
     [Header("Dependencies")]
     public BatikDatabase batikBase;
     public BatikListUI_Orginizer batikListOrginizer;
 
+    private void Start()
+    {
+        UPDATE_BATIK();
+    }
 
     private void Update()
     {
-        manekinUtil.SetActive(isManekin);
+        /*manekinUtil.SetActive(isManekin);*/
 
         /*if (batikDatabse.bajuListBaru[selectedBatik].isLenganUnique)
         {
@@ -92,10 +98,10 @@ public class ModelPlacement : MonoBehaviour
 
     }
 
-    public void TOGGLE_LENGAN()
+    public void TOGGLE_LENGAN(Image thebutton)
     {
         isLenganPanjang = !isLenganPanjang;
-        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR_THISONLY(thebutton);
     }
 
     public void TOGGLE_LENGAN_INSTANT()
@@ -106,10 +112,10 @@ public class ModelPlacement : MonoBehaviour
     }
 
 
-    public void TOGGLE_MANEKIN()
+    public void TOGGLE_MANEKIN(Image thebutton)
     {
         isManekin = !isManekin;
-        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR_THISONLY(thebutton);
     }
 
     public void TOGGLE_MANEKIN_INSTANT()
@@ -124,21 +130,39 @@ public class ModelPlacement : MonoBehaviour
     {
         for(int i=0; i < batikBase.bajuListBaru.Length; i++)
         {
-            if(i != selectedBatik)
+            for (int j = 0; j < batikBase.bajuListBaru[i].batikColorSets.Length; j++)
             {
-                for(int j = 0; j < batikBase.bajuListBaru[i].batikColorSets.Length; j++)
-                {
-                    batikBase.bajuListBaru[i].batikColorSets[j].batikColorObjects.SetActive(false);
-                }
-                continue;
+                batikBase.bajuListBaru[i].batikColorSets[j].batikColorObjects.SetActive(false);
             }
-
-            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].withLenganSet.SetActive(isLenganPanjang);
-            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].noLenganSet.SetActive(!isLenganPanjang);
-
-            batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].kerahForManekin.SetActive(isManekin);
-
         }
+
+        batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].batikColorObjects.SetActive(true);
+        batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].withLenganSet.SetActive(isLenganPanjang);
+        batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].noLenganSet.SetActive(!isLenganPanjang);
+
+        batikBase.bajuListBaru[selectedBatik].batikColorSets[selectedColor].kerahForManekin.SetActive(isManekin);
+
+        manekinUtil.SetActive(isManekin);
+
+        previousSelectedBatik = selectedBatik;
+        previousSelectedColor = selectedColor;
+        isPreviousLenganPanjang = isLenganPanjang;
+        isPreviousManekin = isManekin;
+
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
+    }
+
+
+    public void CANCEL_DEPLOY()
+    {
+        selectedBatik = previousSelectedBatik;
+        selectedColor = previousSelectedColor;
+        isLenganPanjang = isPreviousLenganPanjang;
+        isManekin = isPreviousManekin;
+
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
     /*public void UPDATE_BATIK()

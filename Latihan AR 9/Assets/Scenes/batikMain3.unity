@@ -12310,7 +12310,7 @@ GameObject:
   - component: {fileID: 309293141690456320}
   - component: {fileID: 309293141690456327}
   m_Layer: 5
-  m_Name: color_button
+  m_Name: color_button _warna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12442,7 +12442,7 @@ GameObject:
   - component: {fileID: 309293141760478952}
   - component: {fileID: 309293141760478959}
   m_Layer: 5
-  m_Name: color_button (2)
+  m_Name: color_button (2) _warna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12574,7 +12574,7 @@ GameObject:
   - component: {fileID: 309293142583596857}
   - component: {fileID: 309293142583596862}
   m_Layer: 5
-  m_Name: color_button (1)
+  m_Name: color_button (1) _warna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
