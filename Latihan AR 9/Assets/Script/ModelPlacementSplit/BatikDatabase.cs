@@ -36,6 +36,8 @@ public class BatikDatabase : MonoBehaviour
         public string teknikProduksi = "Batik Tulis";
         public string caraPerawatan = "Hindari penggunaan pemutih dalam mencuci kain karena dapat merusak bahan dari kain";
 
+        public bool isFavorite;
+
         [Header("Link sosmed")]
         public string linkInstagram;
         public string linkWa;

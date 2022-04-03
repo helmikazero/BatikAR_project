@@ -15,6 +15,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Button btWA;
     public Button btWebsite;
 
+    public bool isFavoriteMode;
 
 
 
@@ -69,6 +70,13 @@ public class BatikListUI_Orginizer : MonoBehaviour
             spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikBase.bajuListBaru[i].batikColorSets[0].thumbnail; //Ngisi thumbnail pakai gambar batik pertama
             int batikIndexNew = i;
             spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew)); //Masang fungsi tombol untuk milih batik kalau mencet tombol batik
+
+            //Ngeset toggle nya
+            Toggle theBatikButtonFavoriteToggle = spawnedBatikButton.GetComponentInChildren<Toggle>();
+            theBatikButtonFavoriteToggle.onValueChanged.AddListener(delegate
+            {
+                FAVORITE_TOGGLE_BUTTON(theBatikButtonFavoriteToggle, batikIndexNew);
+            });
 
         }
 
@@ -298,5 +306,31 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void OPEN_LINK(string link)
     {
         Application.OpenURL(link);
+    }
+
+    public void CHANGE_FAVORITE_PAGE()
+    {
+        isFavoriteMode = !isFavoriteMode;
+
+        if (isFavoriteMode)
+        {
+            for(int i = 0; i < batikBase.bajuListBaru.Length; i++)
+            {
+                listSpot.GetChild(i).gameObject.SetActive(batikBase.bajuListBaru[i].isFavorite == isFavoriteMode);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+            {
+                listSpot.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+    }
+
+
+    public void FAVORITE_TOGGLE_BUTTON(Toggle thisToggle, int batikIndex)
+    {
+        batikBase.bajuListBaru[batikIndex].isFavorite = thisToggle.isOn;
     }
 }

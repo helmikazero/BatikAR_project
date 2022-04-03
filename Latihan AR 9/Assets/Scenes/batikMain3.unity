@@ -510,6 +510,7 @@ MonoBehaviour:
     asalDaerah: Sulawesi
     teknikProduksi: Cetak
     caraPerawatan: DIgerus
+    isFavorite: 0
     linkInstagram: 
     linkWa: 
     linkWebsite: 
@@ -12142,6 +12143,7 @@ MonoBehaviour:
   btInsta: {fileID: 2490053556868249256}
   btWA: {fileID: 2490053555418030207}
   btWebsite: {fileID: 2490053556950632769}
+  isFavoriteMode: 0
   UIBajuListPrefab: {fileID: 5032544683968424709, guid: 01255a4b2e2209f4f972c8a7d7837ce6, type: 3}
   ColorSelectionButtonPrefab: {fileID: 4068032614524428917, guid: b7e2e8a00c84c9549b917f2014e86f42, type: 3}
   durationMove: 0.5
@@ -14111,7 +14113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1116465970170866819}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2036726719}
+        m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
+        m_MethodName: CHANGE_FAVORITE_PAGE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1116465970170866819
 MonoBehaviour:
   m_ObjectHideFlags: 0
