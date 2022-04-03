@@ -101,7 +101,8 @@ public class ModelPlacement : MonoBehaviour
     public void TOGGLE_LENGAN(Image thebutton)
     {
         isLenganPanjang = !isLenganPanjang;
-        batikListOrginizer.SET_TOGGLELENGAN_COLOR_THISONLY(thebutton);
+        /*batikListOrginizer.SET_TOGGLELENGAN_COLOR_THISONLY(thebutton);*/
+        batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
     public void TOGGLE_LENGAN_INSTANT()
@@ -115,7 +116,8 @@ public class ModelPlacement : MonoBehaviour
     public void TOGGLE_MANEKIN(Image thebutton)
     {
         isManekin = !isManekin;
-        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR_THISONLY(thebutton);
+        /*batikListOrginizer.SET_TOGGLEMANEKIN_COLOR_THISONLY(thebutton);*/
+        batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
     }
 
     public void TOGGLE_MANEKIN_INSTANT()
