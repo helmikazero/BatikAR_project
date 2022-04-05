@@ -24,6 +24,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     [Header("UI Prefabs")]
     public GameObject UIBajuListPrefab; //Template Tombol Batik di list
     public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
+    public RectTransform PeringatanPopUp;
 
     [Header("Window Animation")]
     public float durationMove; //Kecepatan smoothing UI
@@ -38,6 +39,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     [Header("Dependencies")]
     public BatikDatabase batikBase; //Script database nyimpen batik
     public ModelPlacement modelPlacement; //Posisi titik batik
+    public MenuDropDown menudropdown;
 
 
     [Header("Lengan ON/OFF")]
@@ -50,10 +52,14 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Sprite manekinIsOn;
     public Sprite manekinIsOff;
 
-    [Header("Instant Color/Manekin")]
+    [Header("Interaction Button Access")]
     public GameObject btnColorInstant;
     public GameObject btnManekinInstant;
+    public GameObject btnDropDown;
 
+    [Header("SmallPOPUP Menu")]
+    public GameObject menuWarna;
+    public GameObject menuManekin;
 
 
 
@@ -88,22 +94,26 @@ public class BatikListUI_Orginizer : MonoBehaviour
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
 
         SET_COLOR_BUTTON(modelPlacement.selectedBatik);
+        SmallPOP_Menu_Controller();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].batikMotifObjects.activeSelf == true)
+       /* if (batikBase.bajuListBaru[modelPlacement.selectedBatik].batikMotifObjects.activeSelf == true)
         {
             btnColorInstant.GetComponent<Button>().interactable = true;
             btnManekinInstant.GetComponent<Button>().interactable = true;
-
+            btnColorInstant.GetComponent<Button>().onClick.AddListener(() => SMALLPOP_MENU(menuWarna));
+            btnManekinInstant.GetComponent<Button>().onClick.AddListener(() => SMALLPOP_MENU(menuManekin));
         }
         else
         {
             btnColorInstant.GetComponent<Button>().interactable = false;
             btnManekinInstant.GetComponent<Button>().interactable = false;
-        }
+            btnColorInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnManekinInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+        }*/
     }
 
 
@@ -309,6 +319,32 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+    public void SmallPOP_Menu_Controller()
+    {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].batikMotifObjects.activeSelf == true)
+        {
+            /*btnColorInstant.GetComponent<Button>().interactable = true;
+            btnManekinInstant.GetComponent<Button>().interactable = true;*/
+            btnColorInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnManekinInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnDropDown.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnColorInstant.GetComponent<Button>().onClick.AddListener(() => SMALLPOP_MENU(menuWarna));
+            btnManekinInstant.GetComponent<Button>().onClick.AddListener(() => SMALLPOP_MENU(menuManekin));
+            btnDropDown.GetComponent<Button>().onClick.AddListener(() => menudropdown.TOGGLE_DROP());
+        }
+        else
+        {
+            /*btnColorInstant.GetComponent<Button>().interactable = false;
+            btnManekinInstant.GetComponent<Button>().interactable = false;*/
+            btnColorInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnManekinInstant.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnDropDown.GetComponent<Button>().onClick.RemoveAllListeners();
+            btnColorInstant.GetComponent<Button>().onClick.AddListener(() => PopUP_Peringatan());
+            btnManekinInstant.GetComponent<Button>().onClick.AddListener(() => PopUP_Peringatan());
+            btnDropDown.GetComponent<Button>().onClick.AddListener(() => PopUP_Peringatan());
+        }
+    }
+
     public void SMALLPOP_CLOSE(GameObject popMenuObject)
     {
         if (popMenuObject.activeSelf)
@@ -346,5 +382,19 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void FAVORITE_TOGGLE_BUTTON(Toggle thisToggle, int batikIndex)
     {
         batikBase.bajuListBaru[batikIndex].isFavorite = thisToggle.isOn;
+    }
+
+    public void PopUP_Peringatan()
+    {
+        PeringatanPopUp.gameObject.SetActive(true);
+        PeringatanPopUp.DOScale(1f, durationMove).From(0.5f);
+        PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);
+
+    }
+
+    public void Close_Popup_Peringatan()
+    {
+        PeringatanPopUp.DOScale(0.3f, durationMove);
+        PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => PeringatanPopUp.gameObject.SetActive(false));
     }
 }

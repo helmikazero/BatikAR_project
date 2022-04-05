@@ -30,6 +30,7 @@ public class ModelPlacement : MonoBehaviour
         {
             batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
         }
+
         UPDATE_BATIK();
  
       
@@ -97,7 +98,10 @@ public class ModelPlacement : MonoBehaviour
         {
             batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
         }
+
         batikBase.bajuListBaru[selectedBatik].batikMotifObjects.SetActive(true);
+
+        batikListOrginizer.SmallPOP_Menu_Controller();
         UPDATE_BATIK();
 
         /*batikBase.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);*/
