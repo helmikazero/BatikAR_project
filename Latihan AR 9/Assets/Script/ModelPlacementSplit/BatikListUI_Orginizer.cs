@@ -389,12 +389,20 @@ public class BatikListUI_Orginizer : MonoBehaviour
         PeringatanPopUp.gameObject.SetActive(true);
         PeringatanPopUp.DOScale(1f, durationMove).From(0.5f);
         PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);
-
+       
     }
 
-    public void Close_Popup_Peringatan()
+    public void DeleteAll_Object()
     {
-        PeringatanPopUp.DOScale(0.3f, durationMove);
-        PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => PeringatanPopUp.gameObject.SetActive(false));
+        for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
+        }
+        modelPlacement.isManekin = false;
+        modelPlacement.isLenganPanjang = false;
+        modelPlacement.UPDATE_BATIK();
+        menudropdown.TOGGLE_DROP();
+        SmallPOP_Menu_Controller();
     }
+    
 }
