@@ -26,7 +26,13 @@ public class ModelPlacement : MonoBehaviour
 
     private void Start()
     {
+       for(int i = 0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
+        }
         UPDATE_BATIK();
+ 
+      
     }
 
     private void Update()
@@ -87,7 +93,11 @@ public class ModelPlacement : MonoBehaviour
 
     public void DEPLOY()
     {
-
+        for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
+        }
+        batikBase.bajuListBaru[selectedBatik].batikMotifObjects.SetActive(true);
         UPDATE_BATIK();
 
         /*batikBase.bajuListBaru[selectedBatik].batikGameObject.SetActive(true);*/
@@ -167,6 +177,23 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
+
+    public void Instant_Choose_color(GameObject button)
+    {
+        for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            if (batikBase.bajuListBaru[selectedBatik].batikMotifObjects.activeSelf == true)
+            {
+                button.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                button.GetComponent<Button>().interactable = false;
+                
+            }
+        }
+        
+    }
     /*public void UPDATE_BATIK()
     {
         

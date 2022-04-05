@@ -50,6 +50,10 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Sprite manekinIsOn;
     public Sprite manekinIsOff;
 
+    [Header("Instant Color/Manekin")]
+    public GameObject btnColorInstant;
+    public GameObject btnManekinInstant;
+
 
 
 
@@ -89,7 +93,17 @@ public class BatikListUI_Orginizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].batikMotifObjects.activeSelf == true)
+        {
+            btnColorInstant.GetComponent<Button>().interactable = true;
+            btnManekinInstant.GetComponent<Button>().interactable = true;
 
+        }
+        else
+        {
+            btnColorInstant.GetComponent<Button>().interactable = false;
+            btnManekinInstant.GetComponent<Button>().interactable = false;
+        }
     }
 
 
@@ -283,15 +297,15 @@ public class BatikListUI_Orginizer : MonoBehaviour
     }*/
 
     public void SMALLPOP_MENU(GameObject popMenuObject)
-    {
+    {  
         if (!popMenuObject.activeSelf)
         {
             popMenuObject.SetActive(true);
-            popMenuObject.GetComponent<CanvasGroup>().DOFade(1f, durationMove*0.5f).From(0f);
+            popMenuObject.GetComponent<CanvasGroup>().DOFade(1f, durationMove * 0.5f).From(0f);
         }
         else
         {
-            popMenuObject.GetComponent<CanvasGroup>().DOFade(0f, durationMove * 0.5f).OnComplete(()=> popMenuObject.SetActive(false));
+            popMenuObject.GetComponent<CanvasGroup>().DOFade(0f, durationMove * 0.5f).OnComplete(() => popMenuObject.SetActive(false));
         }
     }
 

@@ -38,6 +38,8 @@ public class BatikDatabase : MonoBehaviour
 
         public bool isFavorite;
 
+        public GameObject batikMotifObjects;
+
         [Header("Link sosmed")]
         public string linkInstagram;
         public string linkWa;
