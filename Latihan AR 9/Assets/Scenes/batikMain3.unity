@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 149576994}
   - component: {fileID: 149576996}
   - component: {fileID: 149576995}
+  - component: {fileID: 149576997}
   m_Layer: 5
   m_Name: panel_SizeChart
   m_TagString: Untagged
@@ -1205,6 +1206,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149576993}
   m_CullTransparentMesh: 1
+--- !u!225 &149576997
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149576993}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &175301535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9fb37c30ae59b804299d6616c3f4844c, type: 3}
