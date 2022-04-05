@@ -417,6 +417,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.UPDATE_BATIK();
         menudropdown.TOGGLE_DROP();
         SmallPOP_Menu_Controller();
+        
     }
     
 }
