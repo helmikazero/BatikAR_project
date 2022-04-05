@@ -13315,6 +13315,10 @@ MonoBehaviour:
   - {fileID: 26215215}
   manekinIsOn: {fileID: 21300000, guid: e9e14969aa04fa64dbab272f32eb22e8, type: 3}
   manekinIsOff: {fileID: 21300000, guid: 298c89208f7f38040974a6482f6312b6, type: 3}
+  JudulFavIsOn: {fileID: 1875955707}
+  JudulFavIsOff: {fileID: 1116465969707916211}
+  favoritIsOn: {fileID: 21300000, guid: 26f205e66995a85469da5d50ef4d373a, type: 3}
+  favoritIsOff: {fileID: 21300000, guid: d5f91082a4e8e8c40866ba9515b574d5, type: 3}
   btnColorInstant: {fileID: 4341006482567969242}
   btnManekinInstant: {fileID: 4341006481756741862}
   btnDropDown: {fileID: 1542207905}
@@ -15542,10 +15546,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2036726719}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHANGE_FAVORITE_PAGE
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1116465970170866820}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15571,7 +15575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 26f205e66995a85469da5d50ef4d373a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5f91082a4e8e8c40866ba9515b574d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

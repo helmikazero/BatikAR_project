@@ -25,6 +25,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public GameObject UIBajuListPrefab; //Template Tombol Batik di list
     public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
     public RectTransform PeringatanPopUp;
+    
 
     [Header("Window Animation")]
     public float durationMove; //Kecepatan smoothing UI
@@ -51,6 +52,13 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Image[] manekinOnOffButton;
     public Sprite manekinIsOn;
     public Sprite manekinIsOff;
+
+    [Header("Favorit ON/OFF")]
+    public GameObject JudulFavIsOn;
+    public GameObject JudulFavIsOff;
+    
+    public Sprite favoritIsOn;
+    public Sprite favoritIsOff;
 
     [Header("Interaction Button Access")]
     public GameObject btnColorInstant;
@@ -358,7 +366,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         Application.OpenURL(link);
     }
 
-    public void CHANGE_FAVORITE_PAGE()
+    public void CHANGE_FAVORITE_PAGE(GameObject ButtonFavorit)
     {
         isFavoriteMode = !isFavoriteMode;
 
@@ -367,6 +375,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
             for(int i = 0; i < batikBase.bajuListBaru.Length; i++)
             {
                 listSpot.GetChild(i).gameObject.SetActive(batikBase.bajuListBaru[i].isFavorite == isFavoriteMode);
+                JudulFavIsOn.SetActive(true);
+                JudulFavIsOff.SetActive(false);
+                ButtonFavorit.GetComponent<Image>().sprite = favoritIsOn;
             }
         }
         else
@@ -374,6 +385,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
             for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
             {
                 listSpot.GetChild(i).gameObject.SetActive(true);
+                JudulFavIsOn.SetActive(false);
+                JudulFavIsOff.SetActive(true);
+                ButtonFavorit.GetComponent<Image>().sprite = favoritIsOff;
             }
         }
     }
