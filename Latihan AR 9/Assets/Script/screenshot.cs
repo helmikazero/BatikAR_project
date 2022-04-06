@@ -28,9 +28,10 @@ public class screenshot : MonoBehaviour
         
         
         //MOBILE
-        NativeGallery.SaveImageToGallery(texture, "myapp_pictures", name);
+        NativeGallery.SaveImageToGallery(texture, "Batik CLothes Simulator", name);
 
         Destroy(texture);
+        
     }
 
     public void TakeScreenshot()
