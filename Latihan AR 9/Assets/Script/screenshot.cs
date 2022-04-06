@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class screenshot : MonoBehaviour
 {
+    public GameObject UIManajemen;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +32,15 @@ public class screenshot : MonoBehaviour
         NativeGallery.SaveImageToGallery(texture, "Batik CLothes Simulator", name);
 
         Destroy(texture);
-        
+        UIManajemen.gameObject.SetActive(true);
+
     }
 
     public void TakeScreenshot()
     {
+        UIManajemen.gameObject.SetActive(false);
         StartCoroutine("Screenshot");
     }
+
+  
 }
