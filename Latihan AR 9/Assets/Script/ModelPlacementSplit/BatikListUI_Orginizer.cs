@@ -168,6 +168,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         //Ngeset Toggle Didalam UIListBatikDetailPanel
         Toggle BtnFavoritToggle = btnBajuListFavorit.GetComponent<Toggle>();
+        BtnFavoritToggle.onValueChanged.RemoveAllListeners();
         BtnFavoritToggle.onValueChanged.AddListener(delegate
         {
             FAVORITE_TOGGLE_BUTTON(BtnFavoritToggle, index);

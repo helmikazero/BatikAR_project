@@ -13555,6 +13555,7 @@ MonoBehaviour:
   btInsta: {fileID: 2490053556868249256}
   btWA: {fileID: 2490053555418030207}
   btWebsite: {fileID: 2490053556950632769}
+  btnBajuListFavorit: {fileID: 1496236350}
   isFavoriteMode: 0
   UIBajuListPrefab: {fileID: 5032544683968424709, guid: 01255a4b2e2209f4f972c8a7d7837ce6, type: 3}
   ColorSelectionButtonPrefab: {fileID: 4068032614524428917, guid: b7e2e8a00c84c9549b917f2014e86f42, type: 3}
