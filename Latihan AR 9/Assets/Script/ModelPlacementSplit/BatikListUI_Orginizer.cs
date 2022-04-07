@@ -15,6 +15,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Button btWA;
     public Button btWebsite;
 
+    public Toggle btnBajuListFavorit;
     public bool isFavoriteMode;
 
 
@@ -163,6 +164,17 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
         SET_COLOR_BUTTON(modelPlacement.selectedBatik);
+
+
+        //Ngeset Toggle Didalam UIListBatikDetailPanel
+        Toggle BtnFavoritToggle = btnBajuListFavorit.GetComponent<Toggle>();
+        BtnFavoritToggle.onValueChanged.AddListener(delegate
+        {
+            FAVORITE_TOGGLE_BUTTON(BtnFavoritToggle, index);
+            FavoritToggleSlider_Controller();
+        });
+        
+        FavoritToggleBajuList_Controller();
 
 
         OPEN_DETAILPANEL();
@@ -419,5 +431,31 @@ public class BatikListUI_Orginizer : MonoBehaviour
         SmallPOP_Menu_Controller();
         
     }
-    
+
+    public void FavoritToggleSlider_Controller() // Untuk Tombol Silang/ Favorit di UIBAjuDetaiPanel
+    {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
+        {
+            listSpot.GetChild(modelPlacement.selectedBatik).GetComponentInChildren<Toggle>().isOn = true;
+        }
+        else
+        {
+            listSpot.GetChild(modelPlacement.selectedBatik).GetComponentInChildren<Toggle>().isOn = false;
+        }
+
+
+    }
+
+    public void FavoritToggleBajuList_Controller()
+    {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
+        {
+            btnBajuListFavorit.GetComponent<Toggle>().isOn = true;
+        }
+        else
+        {
+            btnBajuListFavorit.GetComponent<Toggle>().isOn = false;
+        }
+    }
+
 }
