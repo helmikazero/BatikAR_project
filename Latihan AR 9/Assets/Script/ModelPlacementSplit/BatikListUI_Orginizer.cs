@@ -15,6 +15,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Button btWA;
     public Button btWebsite;
 
+    public Toggle btnBajuListFavorit;
     public bool isFavoriteMode;
 
 
@@ -25,6 +26,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public GameObject UIBajuListPrefab; //Template Tombol Batik di list
     public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
     public RectTransform PeringatanPopUp;
+    
 
     [Header("Window Animation")]
     public float durationMove; //Kecepatan smoothing UI
@@ -51,6 +53,13 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Image[] manekinOnOffButton;
     public Sprite manekinIsOn;
     public Sprite manekinIsOff;
+
+    [Header("Favorit ON/OFF")]
+    public GameObject JudulFavIsOn;
+    public GameObject JudulFavIsOff;
+    
+    public Sprite favoritIsOn;
+    public Sprite favoritIsOff;
 
     [Header("Interaction Button Access")]
     public GameObject btnColorInstant;
@@ -155,6 +164,18 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
         SET_COLOR_BUTTON(modelPlacement.selectedBatik);
+
+
+        //Ngeset Toggle Didalam UIListBatikDetailPanel
+        Toggle BtnFavoritToggle = btnBajuListFavorit.GetComponent<Toggle>();
+        BtnFavoritToggle.onValueChanged.RemoveAllListeners();
+        BtnFavoritToggle.onValueChanged.AddListener(delegate
+        {
+            FAVORITE_TOGGLE_BUTTON(BtnFavoritToggle, index);
+            FavoritToggleSlider_Controller();
+        });
+        
+        FavoritToggleBajuList_Controller();
 
 
         OPEN_DETAILPANEL();
@@ -358,7 +379,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         Application.OpenURL(link);
     }
 
-    public void CHANGE_FAVORITE_PAGE()
+    public void CHANGE_FAVORITE_PAGE(GameObject ButtonFavorit)
     {
         isFavoriteMode = !isFavoriteMode;
 
@@ -367,6 +388,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
             for(int i = 0; i < batikBase.bajuListBaru.Length; i++)
             {
                 listSpot.GetChild(i).gameObject.SetActive(batikBase.bajuListBaru[i].isFavorite == isFavoriteMode);
+                JudulFavIsOn.SetActive(true);
+                JudulFavIsOff.SetActive(false);
+                ButtonFavorit.GetComponent<Image>().sprite = favoritIsOn;
             }
         }
         else
@@ -374,6 +398,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
             for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
             {
                 listSpot.GetChild(i).gameObject.SetActive(true);
+                JudulFavIsOn.SetActive(false);
+                JudulFavIsOff.SetActive(true);
+                ButtonFavorit.GetComponent<Image>().sprite = favoritIsOff;
             }
         }
     }
@@ -389,12 +416,47 @@ public class BatikListUI_Orginizer : MonoBehaviour
         PeringatanPopUp.gameObject.SetActive(true);
         PeringatanPopUp.DOScale(1f, durationMove).From(0.5f);
         PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);
-
+       
     }
 
-    public void Close_Popup_Peringatan()
+    public void DeleteAll_Object()
     {
-        PeringatanPopUp.DOScale(0.3f, durationMove);
-        PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => PeringatanPopUp.gameObject.SetActive(false));
+        for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+        {
+            batikBase.bajuListBaru[i].batikMotifObjects.SetActive(false);
+        }
+        modelPlacement.isManekin = false;
+        modelPlacement.isLenganPanjang = false;
+        modelPlacement.UPDATE_BATIK();
+        menudropdown.TOGGLE_DROP();
+        SmallPOP_Menu_Controller();
+        
     }
+
+    public void FavoritToggleSlider_Controller() // Untuk Tombol Silang/ Favorit di UIBAjuDetaiPanel
+    {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
+        {
+            listSpot.GetChild(modelPlacement.selectedBatik).GetComponentInChildren<Toggle>().isOn = true;
+        }
+        else
+        {
+            listSpot.GetChild(modelPlacement.selectedBatik).GetComponentInChildren<Toggle>().isOn = false;
+        }
+
+
+    }
+
+    public void FavoritToggleBajuList_Controller()
+    {
+        if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
+        {
+            btnBajuListFavorit.GetComponent<Toggle>().isOn = true;
+        }
+        else
+        {
+            btnBajuListFavorit.GetComponent<Toggle>().isOn = false;
+        }
+    }
+
 }
