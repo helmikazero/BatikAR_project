@@ -30,7 +30,7 @@ public class TutorialSequenceManager : MonoBehaviour
 
     public void NEXT_PAGE()
     {
-        for(int i = 0; i< tutorialSequence[currentSequenceIndex].itemsToSow.Length; i++)
+        for (int i = 0; i < tutorialSequence[currentSequenceIndex].itemsToSow.Length; i++)
         {
             tutorialSequence[currentSequenceIndex].itemsToSow[i].SetActive(false);
         }
@@ -57,6 +57,11 @@ public class TutorialSequenceManager : MonoBehaviour
         {
             tutorialSequence[currentSequenceIndex].itemsToSow[i].SetActive(true);
         }
+
+    }
+
+    public void END_TUTORIAL ()
+    {
 
     }
 }
