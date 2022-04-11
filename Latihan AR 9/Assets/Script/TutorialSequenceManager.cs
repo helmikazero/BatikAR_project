@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialSequenceManager : MonoBehaviour
 {
@@ -62,6 +63,6 @@ public class TutorialSequenceManager : MonoBehaviour
 
     public void END_TUTORIAL ()
     {
-
+        SceneManager.LoadScene("MainMenu");
     }
 }
