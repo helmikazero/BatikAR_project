@@ -26,6 +26,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public GameObject UIBajuListPrefab; //Template Tombol Batik di list
     public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
     public RectTransform PeringatanPopUp;
+    public GameObject PeringatanFav0;
     
 
     [Header("Window Animation")]
@@ -387,10 +388,23 @@ public class BatikListUI_Orginizer : MonoBehaviour
         {
             for(int i = 0; i < batikBase.bajuListBaru.Length; i++)
             {
-                listSpot.GetChild(i).gameObject.SetActive(batikBase.bajuListBaru[i].isFavorite == isFavoriteMode);
+                listSpot.GetChild(i).gameObject.SetActive(batikBase.bajuListBaru[i].isFavorite == true);
                 JudulFavIsOn.SetActive(true);
                 JudulFavIsOff.SetActive(false);
                 ButtonFavorit.GetComponent<Image>().sprite = favoritIsOn;
+            }
+            
+            for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
+            {
+                if (batikBase.bajuListBaru[i].isFavorite == true)
+                {
+                    PeringatanFav0.SetActive(false);
+                    break;
+                }
+                else
+                {
+                    PeringatanFav0.SetActive(true);
+                }
             }
         }
         else
@@ -402,6 +416,8 @@ public class BatikListUI_Orginizer : MonoBehaviour
                 JudulFavIsOff.SetActive(true);
                 ButtonFavorit.GetComponent<Image>().sprite = favoritIsOff;
             }
+
+            PeringatanFav0.SetActive(false);
         }
     }
 
