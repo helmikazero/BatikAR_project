@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/batikMain3.unity
     guid: 27971cc3c1574fa46ab6e60578e4eb4c
   - enabled: 1
-    path: Assets/Scenes/MenuTutorial.unity
-    guid: 97b5a139b53e3cc499adab4a25765247
+    path: Assets/Scenes/MenuTutorial2.unity
+    guid: 8b0cdf05de9133e4590c6ec4b42733f8
   m_configObjects: {}
