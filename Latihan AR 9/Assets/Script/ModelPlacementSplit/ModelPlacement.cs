@@ -6,7 +6,10 @@ using DG.Tweening;
 
 public class ModelPlacement : MonoBehaviour
 {
+    public GameObject modelSpotAll;
     public Transform modelSpot;
+
+
 
     public int selectedBatik = 0;
     public int previousSelectedBatik = 0;
@@ -198,6 +201,17 @@ public class ModelPlacement : MonoBehaviour
         }
         
     }
+
+    public void Reset_Rotation()
+    {
+        
+        
+        modelSpotAll.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
+        modelSpotAll.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        
+        
+    }
+
     /*public void UPDATE_BATIK()
     {
         
