@@ -541,9 +541,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1123588337}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: ba8e43fb67235b443a4d270ff2104c92, type: 3}
       batikColorObjects: {fileID: 1055052629}
@@ -570,9 +570,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1744074815}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: 57b1194a60fc1a44b8374ff5ef79bca6, type: 3}
       batikColorObjects: {fileID: 481239695}
@@ -589,9 +589,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1443273115}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: 100c2ada36d16d94d811ed7b48ad7a77, type: 3}
       batikColorObjects: {fileID: 90020031}
@@ -613,9 +613,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 436404902}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: e6949c13c0bb50042a5dda464af46470, type: 3}
       batikColorObjects: {fileID: 820529970}
@@ -642,9 +642,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 2129458602}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: 4b90d839c4b339948a573d5cfeaec59b, type: 3}
       batikColorObjects: {fileID: 635527362}
@@ -671,9 +671,9 @@ MonoBehaviour:
     caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1594411320}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
+    linkInstagram: https://www.instagram.com/batikgemawangofficial/
+    linkWa: https://api.whatsapp.com/send?phone=628812431013&text=Mau%20tanya
+    linkWebsite: http://batikgemawang.com/
     batikColorSets:
     - thumbnail: {fileID: 21300000, guid: aa8ae7c0c7beed24cbfd1dc05e354477, type: 3}
       batikColorObjects: {fileID: 506513079}
