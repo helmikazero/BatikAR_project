@@ -27,8 +27,8 @@ public class TutorialSequenceManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tutorialSequence[0].voiceRecorder.Play();
-        for (int i = 0; i < tutorialSequence.Length; i++)
+        tutorialSequence[0].voiceRecorder.Play(); //Mengatur untuk mulai suara ke sequence 0
+        for (int i = 0; i < tutorialSequence.Length; i++) // Mengatur semua sequence untuk awalnya Unmute
         {
             tutorialSequence[i].isOn = false;
         }
@@ -40,10 +40,10 @@ public class TutorialSequenceManager : MonoBehaviour
         
     }
 
-
+    // Mengatur tombol Next
     public void NEXT_PAGE()
     {
-        All_ToggleController();
+        
 
         for (int i = 0; i < tutorialSequence[currentSequenceIndex].itemsToSow.Length; i++)
         {
@@ -63,7 +63,7 @@ public class TutorialSequenceManager : MonoBehaviour
 
         tutorialSequence[currentSequenceIndex].voiceRecorder.Play();
 
-        if (tutorialSequence[currentSequenceIndex].isOn)
+        if (tutorialSequence[currentSequenceIndex].isOn) // Mendeteksi Apakah sequence  setelahnya mute / unmute
         {
             tutorialSequence[currentSequenceIndex].voiceRecorder.Stop();
         }
@@ -75,9 +75,11 @@ public class TutorialSequenceManager : MonoBehaviour
         
     }
 
+
+    // Mengatur Tombol Previous
     public void PREV_PAGE()
     {
-        All_ToggleController();
+        
 
         for (int i = 0; i < tutorialSequence[currentSequenceIndex].itemsToSow.Length; i++)
         {
@@ -96,7 +98,7 @@ public class TutorialSequenceManager : MonoBehaviour
 
         tutorialSequence[currentSequenceIndex].voiceRecorder.Play();
 
-        if (tutorialSequence[currentSequenceIndex].isOn)
+        if (tutorialSequence[currentSequenceIndex].isOn) // Mendeteksi Apakah sequence  sebelumnya mute / unmute
         {
             tutorialSequence[currentSequenceIndex].voiceRecorder.Stop();
         }
@@ -110,11 +112,14 @@ public class TutorialSequenceManager : MonoBehaviour
 
     }
 
+    // Kembali ke Menu Utama
     public void END_TUTORIAL ()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
+
+    // Settingan Tombol Sound untuk mute / unmute
     public void MuteToggle ()
     {
 
@@ -134,18 +139,8 @@ public class TutorialSequenceManager : MonoBehaviour
         }
     }
 
-  /*  public void MuteAudio ()
-    {
-        if (tutorialSequence[currentSequenceIndex].isOn)
-        {
-            tutorialSequence[currentSequenceIndex].isOn = false;
-        }
-        else
-        {
-            tutorialSequence[currentSequenceIndex].isOn = true;
-        }
-    }*/
-    
+  
+    // Mengontrol semua sequence untuk mute / unmute
     public void All_AudioController ()
     {
         for (int i = 0; i < tutorialSequence.Length; i++)
@@ -161,6 +156,8 @@ public class TutorialSequenceManager : MonoBehaviour
         }
     }
 
+
+    // Mengontrol Semua UI Apakah mute / unmute
     public void All_ToggleController ()
     {
         for (int i = 0; i < TutorialPopUp.childCount; i++)

@@ -15,6 +15,7 @@ public class BatikDatabase : MonoBehaviour
         public GameObject withLenganSet;
         public GameObject noLenganSet;
 
+        // mengatur agar setiap motif batik (gameobject) masuk ke database
         public void SetUtils()
         {
             if(kerahForManekin == null) kerahForManekin = batikColorObjects.transform.GetChild(0).gameObject;

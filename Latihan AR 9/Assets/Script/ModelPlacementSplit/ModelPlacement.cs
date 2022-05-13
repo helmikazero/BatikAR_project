@@ -95,6 +95,8 @@ public class ModelPlacement : MonoBehaviour
         *//*theObject.GetComponent<MeshRenderer>().materials[matElement] = newMaterial;*//*
     }*/
 
+
+    // Tombol Untuk Mengaktifkan Model Batik yang dipilih
     public void DEPLOY()
     {
         for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
@@ -114,14 +116,14 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.CLOSE_LISTWINDOW();
 
     }
-
+    // Mengatur UI Lengan pada Batik Detail Panel
     public void TOGGLE_LENGAN(Image thebutton)
     {
-        isLenganPanjang = !isLenganPanjang;
-        /*batikListOrginizer.SET_TOGGLELENGAN_COLOR_THISONLY(thebutton);*/
+        isLenganPanjang = !isLenganPanjang;      
         batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
+    // Mengatur Lengan aktif / tidak setelah memunculkan motif / objek
     public void TOGGLE_LENGAN_INSTANT()
     {
         isLenganPanjang = !isLenganPanjang;
@@ -129,14 +131,14 @@ public class ModelPlacement : MonoBehaviour
         UPDATE_BATIK();
     }
 
-
+    // Mengatur UI Manekin pada Batik Detail Panel
     public void TOGGLE_MANEKIN(Image thebutton)
     {
         isManekin = !isManekin;
-        /*batikListOrginizer.SET_TOGGLEMANEKIN_COLOR_THISONLY(thebutton);*/
         batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
     }
-
+    
+    // Mengatur Manekin aktif / tidak setelah memunculkan motif / objek
     public void TOGGLE_MANEKIN_INSTANT()
     {
         isManekin = !isManekin;
@@ -144,7 +146,7 @@ public class ModelPlacement : MonoBehaviour
         UPDATE_BATIK();
     }
 
-
+    // Mengupdate batik setiap kali ada perubahan yang terjadi seperti warna, lengan, dan manekin
     public void UPDATE_BATIK()
     {
         for(int i=0; i < batikBase.bajuListBaru.Length; i++)
@@ -172,7 +174,7 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
-
+    // Mengatur kembali batik yang sudah diklik namun tidak jadi di deploy / dimunculkan
     public void CANCEL_DEPLOY()
     {
         selectedBatik = previousSelectedBatik;
@@ -184,7 +186,7 @@ public class ModelPlacement : MonoBehaviour
         batikListOrginizer.SET_TOGGLELENGAN_COLOR();
     }
 
-
+    // Mengatur tombol interaksi pada motif batik apabila tersedia atau tidak
     public void Instant_Choose_color(GameObject button)
     {
         for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
@@ -202,64 +204,14 @@ public class ModelPlacement : MonoBehaviour
         
     }
 
+
+    // mengatur ulang posisi model
     public void Reset_Rotation()
     {
-        
-        
         modelSpotAll.transform.rotation = Quaternion.Euler(new Vector3(0.0f, 180.0f, 0.0f));
-        modelSpotAll.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        
-        
+        modelSpotAll.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);  
     }
 
-    /*public void UPDATE_BATIK()
-    {
-        
-        for (int i = 0; i < batikDatabse.bajuListBaru.Length; i++)
-        {
-            if(i != selectedBatik)
-            {
-                //Ngilangin semua objek batik yang bukan selectedBatik
-                batikDatabse.bajuListBaru[i].batikGameObject.SetActive(false);
-                continue; //Ngeskip loop langsung ke iterasi batik selanjutnya
-            }
-
-            if (batikDatabse.bajuListBaru[selectedBatik].isLenganUnique)
-            {
-                for (int j = 0; j < batikDatabse.bajuListBaru[selectedBatik].colorObjectSet.Length; j++)
-                {
-                    if (j != selectedColor)
-                    {
-                        //Ngilangin semua object yang bukan color batik ini
-                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].SetActive(false);
-                        continue; //ngeskip loop biar langsung ke iterasi colorObjectSet selanjutnya
-                    }
-
-                    if (isLenganPanjang)
-                    {
-                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(false); //matiin yang lengan pendek
-                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(true); //nyalain yang lengan panjang
-                    }
-                    else
-                    {
-                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(0).gameObject.SetActive(true); //nyalain yang lengan pendek
-                        batikDatabse.bajuListBaru[selectedBatik].colorObjectSet[i].transform.GetChild(1).gameObject.SetActive(false); //matiin yang lengan panjang
-                    }
-
-
-                    //HASIL LOOP = ngematiin semua set warna batik yang ngk kepilih dan ngeset lengan panjang atau pendek
-                }
-            }
-            else
-            {
-                batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(0).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
-                batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).GetComponent<MeshRenderer>().materials = batikDatabse.bajuListBaru[selectedBatik].colorSets[selectedColor].materialSet;
-
-                batikDatabse.bajuListBaru[selectedBatik].batikGameObject.transform.GetChild(1).gameObject.SetActive(isLenganPanjang);
-
-            }
-
-        }
-    }*/
+    
 
 }

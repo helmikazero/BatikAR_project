@@ -85,13 +85,13 @@ public class BatikListUI_Orginizer : MonoBehaviour
             }*/
 
 
-            GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Ngespawn tombol UI batik
-            spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikBase.bajuListBaru[i].name; //Nge update nama batik di tombol
-            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikBase.bajuListBaru[i].batikColorSets[0].thumbnail; //Ngisi thumbnail pakai gambar batik pertama
+            GameObject spawnedBatikButton = Instantiate(UIBajuListPrefab, listSpot); //Mengspawn Tombol UI Batik
+            spawnedBatikButton.transform.GetChild(0).GetComponent<Text>().text = batikBase.bajuListBaru[i].name; //Mengupdate nama batik di tombol
+            spawnedBatikButton.transform.GetChild(1).GetComponent<Image>().sprite = batikBase.bajuListBaru[i].batikColorSets[0].thumbnail; //Mengupdate thumbnail pakai gambar batik pertama
             int batikIndexNew = i;
             spawnedBatikButton.GetComponent<Button>().onClick.AddListener(() => CHOOSEBATIK(batikIndexNew)); //Masang fungsi tombol untuk milih batik kalau mencet tombol batik
 
-            //Ngeset toggle nya
+            //Ngeset toggle favorit
             Toggle theBatikButtonFavoriteToggle = spawnedBatikButton.GetComponentInChildren<Toggle>();
             theBatikButtonFavoriteToggle.onValueChanged.AddListener(delegate
             {
@@ -100,6 +100,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         }
 
+        //Animasi  UI Baju Detail Panel ditutup di awal
         UIBajuDetailPanel.DOScale(0.3f, durationMove);
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
 
@@ -126,7 +127,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }*/
     }
 
-
+    // Mengeset PopUp Baju Detail Panel beserta tombol dan isinya
     public void CHOOSEBATIK(int index)
     {
 
@@ -184,6 +185,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         
     }
 
+    // Mengatur tombol warna di Batik Detail Panel dan di Tombol Instant Color sesuai database
     void SET_COLOR_BUTTON(int index)
     {
         Debug.Log("selesai select color");
@@ -214,7 +216,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
-
+    // Memunculkan Batik Detail Panel
     public void OPEN_DETAILPANEL()
     {
         UIBajuDetailPanel.gameObject.SetActive(true); //dari tidak ada jadi muncul
@@ -222,6 +224,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f); //dari ilang ke muncul warna pelan2
     }
 
+    // Mengatur Tombol warna dan Thumbnail di Batik Detail Panel
     public void CHOOSECOLOR(int index)
     {
         Debug.Log("choose color yes =" + index);
@@ -231,6 +234,8 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.selectedColor = index; //Ngisi jenis warna yang di deploy
     }
 
+
+    // mengatur tombol warna instant agar model batik dapat langsung berubah
     public void CHOOSECOLOR_INSTANT(int index)
     {
         Debug.Log("choose color yes =" + index);
@@ -238,18 +243,20 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.UPDATE_BATIK();
     }
 
+    //Menutup Pop Up Baju detail Panel
     public void CLOSE_DETAILWINDOW()
     {
         UIBajuDetailPanel.DOScale(0.3f, durationMove);
         UIBajuDetailPanel.GetComponent<CanvasGroup>().DOFade(0f, durationMove).OnComplete(() => UIBajuDetailPanel.gameObject.SetActive(false));
     }
 
+    // Mengatur Panel Slider
     public void CLOSE_LISTWINDOW()
     {
         GameObject.FindObjectOfType<BatikPanelSlider>().GetComponent<BatikPanelSlider>().CLOSE_PANEL();
     }
 
-
+    // Mengatur tampilan UI tombol Lengan
     public void SET_TOGGLELENGAN_COLOR_THISONLY(Image thebutton)
     {
         if (modelPlacement.isLenganPanjang)
@@ -262,6 +269,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+    // Mengatur tampilan UI tombol Lengan
     public void SET_TOGGLELENGAN_COLOR()
     {
         for (int i = 0; i < lenganOnOffButton.Length; i++)
@@ -277,6 +285,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         } 
     }
 
+    // Mengatur tampilan UI tombol Manekin
     public void SET_TOGGLEMANEKIN_COLOR_THISONLY(Image thebutton)
     {
         if (modelPlacement.isManekin)
@@ -289,6 +298,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+    // Mengatur tampilan UI tombol Manekin
     public void SET_TOGGLEMANEKIN_COLOR()
     {
         for(int i = 0; i < manekinOnOffButton.Length; i++)
@@ -304,30 +314,8 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
-    /*public void SET_TOGGLELENGAN_COLOR(bool isLenganPanjang, Image tombolToggleLengan)
-    {
-        if (isLenganPanjang)
-        {
-            tombolToggleLengan.sprite = lenganIsOn;
-        }
-        else
-        {
-            tombolToggleLengan.sprite = lenganIsOff;
-        }
-    }
-
-    public void SET_TOGGLEMANEKIN_COLOR(bool isManekin, Image tombolToggleManekin)
-    {
-        if (isManekin)
-        {
-            tombolToggleManekin.sprite = lenganIsOn;
-        }
-        else
-        {
-            tombolToggleManekin.sprite = lenganIsOff;
-        }
-    }*/
-
+    
+    // Mengatur Animasi POPUP apabila gameobject yang dipilih tidak aktif sehingga diaktifkan
     public void SMALLPOP_MENU(GameObject popMenuObject)
     {  
         if (!popMenuObject.activeSelf)
@@ -341,6 +329,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+    //Mengatur interaksi tombol ketika tidak ada model batik yang dipilih
     public void SmallPOP_Menu_Controller()
     {
         if (batikBase.bajuListBaru[modelPlacement.selectedBatik].batikMotifObjects.activeSelf == true)
@@ -367,6 +356,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+    // Menonaktifkan POPup bila sedang dibuka
     public void SMALLPOP_CLOSE(GameObject popMenuObject)
     {
         if (popMenuObject.activeSelf)
@@ -375,11 +365,14 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+
+    //Membuka link yang dipilih
     public void OPEN_LINK(string link)
     {
         Application.OpenURL(link);
     }
 
+    //Mengatur tampilan menu batik favorit yang telah dipilih
     public void CHANGE_FAVORITE_PAGE(GameObject ButtonFavorit)
     {
         isFavoriteMode = !isFavoriteMode;
@@ -421,12 +414,14 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
-
+    // Mengatur apakah batik termasuk favorit di toggle atau tidak
     public void FAVORITE_TOGGLE_BUTTON(Toggle thisToggle, int batikIndex)
     {
         batikBase.bajuListBaru[batikIndex].isFavorite = thisToggle.isOn;
     }
 
+
+    // memunculkan popup peringatan
     public void PopUP_Peringatan()
     {
         PeringatanPopUp.gameObject.SetActive(true);
@@ -435,6 +430,8 @@ public class BatikListUI_Orginizer : MonoBehaviour
        
     }
 
+
+    // menghapus objek yang ditampilkan
     public void DeleteAll_Object()
     {
         for (int i = 0; i < batikBase.bajuListBaru.Length; i++)
@@ -449,7 +446,9 @@ public class BatikListUI_Orginizer : MonoBehaviour
         
     }
 
-    public void FavoritToggleSlider_Controller() // Untuk Tombol Silang/ Favorit di UIBAjuDetaiPanel
+
+    // Untuk ngatur favorit di slider
+    public void FavoritToggleSlider_Controller() 
     {
         if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
         {
@@ -463,6 +462,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
     }
 
+    // Untuk Tombol Favorit di UIBAjuDetaiPanel apakah sudah disukai atau belum
     public void FavoritToggleBajuList_Controller()
     {
         if (batikBase.bajuListBaru[modelPlacement.selectedBatik].isFavorite)
