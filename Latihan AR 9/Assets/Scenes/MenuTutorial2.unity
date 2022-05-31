@@ -54307,6 +54307,7 @@ MonoBehaviour:
     - {fileID: 727977326}
     - {fileID: 1125162220}
     - {fileID: 74136089}
+    - {fileID: 1055052629}
     voiceRecorder: {fileID: 1372518205}
     isOn: 1
   - sequenceDesc: Seq_Shopping (1)
@@ -54315,6 +54316,7 @@ MonoBehaviour:
     - {fileID: 982278241}
     - {fileID: 74136089}
     - {fileID: 1961057697}
+    - {fileID: 1055052629}
     voiceRecorder: {fileID: 1657228381}
     isOn: 1
   - sequenceDesc: Seq 20
