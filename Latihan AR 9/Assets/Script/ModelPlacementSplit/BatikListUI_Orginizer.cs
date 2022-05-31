@@ -11,9 +11,16 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public Text dpBatikName;
     public Text dpDeskripsi;
     public Image dpThumbnailBatik;
+    
     public Button btInsta;
     public Button btWA;
     public Button btWebsite;
+
+    public GameObject btShopping;
+    public Button btInsta2;
+    public Button btWA2;
+    public Button btWebsite2;
+
 
     public Toggle btnBajuListFavorit;
     public bool isFavoriteMode;
@@ -475,4 +482,26 @@ public class BatikListUI_Orginizer : MonoBehaviour
         }
     }
 
+
+    //Mengatur Agar Tombol Shopping di MenuAR dapat langsung terhubung link sosmed dari penjual
+    public void BtnShopping ()
+    {
+        btShopping.gameObject.SetActive(true);
+        btInsta2.interactable = batikBase.bajuListBaru[modelPlacement.selectedBatik].linkInstagram != "";
+        btInsta2.onClick.RemoveAllListeners();
+        btInsta2.onClick.AddListener(() => OPEN_LINK(batikBase.bajuListBaru[modelPlacement.selectedBatik].linkInstagram));
+
+        btWA2.interactable = batikBase.bajuListBaru[modelPlacement.selectedBatik].linkWa != "";
+        btWA2.onClick.RemoveAllListeners();
+        btWA2.onClick.AddListener(() => OPEN_LINK(batikBase.bajuListBaru[modelPlacement.selectedBatik].linkWa));
+
+        btWebsite2.interactable = batikBase.bajuListBaru[modelPlacement.selectedBatik].linkWebsite != "";
+        btWebsite2.onClick.RemoveAllListeners();
+        btWebsite2.onClick.AddListener(() => OPEN_LINK(batikBase.bajuListBaru[modelPlacement.selectedBatik].linkWebsite));
+    }
+
+    public void SetNonActiveObject (GameObject Button)
+    {
+        Button.gameObject.SetActive(false);
+    }
 }
