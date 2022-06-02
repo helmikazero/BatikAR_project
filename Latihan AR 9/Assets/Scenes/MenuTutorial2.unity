@@ -6198,7 +6198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a5a17d6dbf898a44c8572b813fc234fa, type: 3}
       propertyPath: m_Name
-      value: Baju Tanpa Kerah 1
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a5a17d6dbf898a44c8572b813fc234fa, type: 3}
       propertyPath: m_IsActive
@@ -11008,7 +11008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1957601104579356, guid: c36c2bcaeaeaea44cb8d5eeb6560c5bb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4065658806772206, guid: c36c2bcaeaeaea44cb8d5eeb6560c5bb, type: 3}
       propertyPath: m_RootOrder
@@ -20868,7 +20868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114961382245868814, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114961382245868814, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
       propertyPath: ActiveControl
@@ -20887,7 +20887,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 772157261}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c761ac074d64224388d60d508467aeb, type: 3}
   m_Name: 
@@ -51669,7 +51669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3ef7ecf244da0594bb31416a1f5f7569, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea85947a698261745966a0f3ae57fe0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54308,6 +54308,7 @@ MonoBehaviour:
     - {fileID: 1125162220}
     - {fileID: 74136089}
     - {fileID: 1055052629}
+    - {fileID: 1727919421}
     voiceRecorder: {fileID: 1372518205}
     isOn: 1
   - sequenceDesc: Seq_Shopping (1)
@@ -54317,6 +54318,7 @@ MonoBehaviour:
     - {fileID: 74136089}
     - {fileID: 1961057697}
     - {fileID: 1055052629}
+    - {fileID: 1727919421}
     voiceRecorder: {fileID: 1657228381}
     isOn: 1
   - sequenceDesc: Seq 20
