@@ -984,7 +984,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_MANEKIN_INSTANT
         m_Mode: 1
@@ -2710,209 +2710,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74136089}
   m_CullTransparentMesh: 1
---- !u!1 &74658634
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 74658635}
-  - component: {fileID: 74658636}
-  m_Layer: 0
-  m_Name: BATIK_DATABASE
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &74658635
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74658634}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102203343}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &74658636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74658634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6950c20d4166acd45a62cb046151017c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bajuListBaru:
-  - name: Batik Puskesmas
-    deskripsi: Batik Puskesmas Merupakan Batik
-    warnaDasar: Merah, Ungu, Kuning
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 1123588337}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: ba8e43fb67235b443a4d270ff2104c92, type: 3}
-      batikColorObjects: {fileID: 1055052629}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 87b0f07a3870e5c46b59ccdff7699aca, type: 3}
-      batikColorObjects: {fileID: 811757634}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 129b5d90f5010314f89b8f070b6ce592, type: 3}
-      batikColorObjects: {fileID: 539584456}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-  - name: Batik Dinding
-    deskripsi: Batik Dinding Merupakan Batik
-    warnaDasar: Putih
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 1744074815}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: 57b1194a60fc1a44b8374ff5ef79bca6, type: 3}
-      batikColorObjects: {fileID: 481239695}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-  - name: Batik Bambu
-    deskripsi: Batik Bambu Merupakan Batik
-    warnaDasar: Cokelat, Biru
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 1443273115}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: 100c2ada36d16d94d811ed7b48ad7a77, type: 3}
-      batikColorObjects: {fileID: 90020031}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 62e693749bbf2404e9c47dc2d62434c8, type: 3}
-      batikColorObjects: {fileID: 567647787}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-  - name: Batik Parang Kopi
-    deskripsi: Bati Parang Kopi Adalah
-    warnaDasar: Cokelat, Biru
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 436404902}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: e6949c13c0bb50042a5dda464af46470, type: 3}
-      batikColorObjects: {fileID: 820529970}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 534567465da214d4085d73d23a4055d2, type: 3}
-      batikColorObjects: {fileID: 724206719}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 6e88b1c4b26a1cc498e0a0854b7deb14, type: 3}
-      batikColorObjects: {fileID: 253262017}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-  - name: Batik Monstera
-    deskripsi: Batik Monstera
-    warnaDasar: Cokelat, Biru
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 2129458602}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: 4b90d839c4b339948a573d5cfeaec59b, type: 3}
-      batikColorObjects: {fileID: 635527362}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 3b00d57c8890c1a4fbe37e86f0041016, type: 3}
-      batikColorObjects: {fileID: 1456196494}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 28c7eacad2037da49847c2dafe3daca1, type: 3}
-      batikColorObjects: {fileID: 39063543}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-  - name: Batik Godhong Gedhang
-    deskripsi: Bati Godhong Gedhang
-    warnaDasar: Cokelat, Biru
-    ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
-    teknikProduksi: Cetak
-    caraPerawatan: DIgerus
-    isFavorite: 0
-    batikMotifObjects: {fileID: 1594411320}
-    linkInstagram: 
-    linkWa: 
-    linkWebsite: 
-    batikColorSets:
-    - thumbnail: {fileID: 21300000, guid: aa8ae7c0c7beed24cbfd1dc05e354477, type: 3}
-      batikColorObjects: {fileID: 506513079}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 6f31ac0149ac6574dae3898062002280, type: 3}
-      batikColorObjects: {fileID: 426809987}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
-    - thumbnail: {fileID: 21300000, guid: 15a9b6371c1328a46ac66170a30e4bfe, type: 3}
-      batikColorObjects: {fileID: 821114527}
-      kerahForManekin: {fileID: 0}
-      withLenganSet: {fileID: 0}
-      noLenganSet: {fileID: 0}
 --- !u!1 &76133383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3427,11 +3224,6 @@ Transform:
   m_LocalPosition: {x: 401.1045, y: 983.6616, z: -1478.0004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 456913115}
-  - {fileID: 2036726718}
-  - {fileID: 74658635}
-  - {fileID: 256158571}
-  - {fileID: 2036375939}
   - {fileID: 585858905}
   - {fileID: 2079964492}
   - {fileID: 1835500112}
@@ -4771,7 +4563,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -4783,7 +4575,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -4795,7 +4587,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -5478,7 +5270,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -6636,7 +6428,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -6909,52 +6701,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254863494}
   m_CullTransparentMesh: 1
---- !u!1 &256158570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 256158571}
-  - component: {fileID: 256158572}
-  m_Layer: 0
-  m_Name: BATIKS_SLIDERSYS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &256158571
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256158570}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102203343}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &256158572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256158570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd2c1ad1102366e4780a9ee9a55c3151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  batikPanel: {fileID: 1116465968990802692}
-  smoothDuration: 0.5
-  listOpened: 0
 --- !u!1 &257566514
 GameObject:
   m_ObjectHideFlags: 0
@@ -7245,7 +6991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_LENGAN
         m_Mode: 1
@@ -7849,7 +7595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CLOSE_DETAILWINDOW
         m_Mode: 1
@@ -12839,62 +12585,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454571378}
   m_CullTransparentMesh: 1
---- !u!1 &456913113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 456913115}
-  - component: {fileID: 456913114}
-  m_Layer: 0
-  m_Name: MODEL_PLACEMENT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &456913114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456913113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769d072188a6ae3419425d17715cab8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modelSpotAll: {fileID: 0}
-  modelSpot: {fileID: 1400789715}
-  selectedBatik: 0
-  previousSelectedBatik: 0
-  selectedColor: 0
-  previousSelectedColor: 0
-  isPreviousManekin: 0
-  isManekin: 0
-  manekinUtil: {fileID: 1727919421}
-  isPreviousLenganPanjang: 0
-  isLenganPanjang: 0
-  batikBase: {fileID: 74658636}
-  batikListOrginizer: {fileID: 2036726719}
---- !u!4 &456913115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456913113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102203343}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &458521545
 GameObject:
   m_ObjectHideFlags: 0
@@ -16000,7 +15690,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102203343}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586388955
 GameObject:
@@ -21330,7 +21020,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -24628,7 +24318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: DeleteAll_Object
         m_Mode: 1
@@ -24640,7 +24330,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -24652,7 +24342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -27103,7 +26793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_LENGAN
         m_Mode: 1
@@ -28029,7 +27719,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_LENGAN_INSTANT
         m_Mode: 1
@@ -29590,7 +29280,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -29602,7 +29292,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -29614,7 +29304,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -30787,7 +30477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHANGE_FAVORITE_PAGE
         m_Mode: 2
@@ -37836,7 +37526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -37848,7 +37538,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -37860,7 +37550,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -38773,7 +38463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -38910,7 +38600,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: DEPLOY
         m_Mode: 1
@@ -42611,7 +42301,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -46054,7 +45744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -46066,7 +45756,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -46078,7 +45768,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -47125,7 +46815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102203343}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1835500113
 MonoBehaviour:
@@ -48027,7 +47717,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: DEPLOY
         m_Mode: 1
@@ -51021,7 +50711,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -51153,7 +50843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -51165,7 +50855,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -51177,7 +50867,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -52488,141 +52178,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033321380}
   m_CullTransparentMesh: 1
---- !u!1 &2036375938
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2036375939}
-  - component: {fileID: 2036375940}
-  m_Layer: 0
-  m_Name: DROPDOWN_SCRIPT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2036375939
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036375938}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102203343}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2036375940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036375938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5225e7c0d65114596a3e34bce4964d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeSpeed: 1
-  dropMenu: {fileID: 922362806}
-  dropButton: {fileID: 1542207906}
-  dropButtonFollowPos: {fileID: 384249346}
-  isOpen: 0
---- !u!1 &2036726717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2036726718}
-  - component: {fileID: 2036726719}
-  m_Layer: 0
-  m_Name: BATIK_UI_MANAGER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2036726718
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036726717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102203343}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2036726719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036726717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e200cde42d36c440bff223e41f9df98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIBajuDetailPanel: {fileID: 2490053557016328029}
-  dpBatikName: {fileID: 2490053555540986653}
-  dpDeskripsi: {fileID: 2490053556018796048}
-  dpThumbnailBatik: {fileID: 2490053556911594526}
-  btInsta: {fileID: 2490053556868249256}
-  btWA: {fileID: 2490053555418030207}
-  btWebsite: {fileID: 2490053556950632769}
-  btShopping: {fileID: 0}
-  btInsta2: {fileID: 0}
-  btWA2: {fileID: 0}
-  btWebsite2: {fileID: 0}
-  btnBajuListFavorit: {fileID: 1496236350}
-  isFavoriteMode: 0
-  UIBajuListPrefab: {fileID: 5032544683968424709, guid: 01255a4b2e2209f4f972c8a7d7837ce6, type: 3}
-  ColorSelectionButtonPrefab: {fileID: 4068032614524428917, guid: b7e2e8a00c84c9549b917f2014e86f42, type: 3}
-  PeringatanPopUp: {fileID: 752257206}
-  PeringatanFav0: {fileID: 0}
-  durationMove: 0.5
-  listSpot: {fileID: 1116465969801809467}
-  colorListSpot:
-  - {fileID: 2490053556975768667}
-  - {fileID: 1269631831}
-  batikBase: {fileID: 74658636}
-  modelPlacement: {fileID: 456913114}
-  menudropdown: {fileID: 2036375940}
-  lenganOnOffButton:
-  - {fileID: 2490053557162723032}
-  - {fileID: 1100582011}
-  lenganIsOn: {fileID: 21300000, guid: b3904ca2088bd5d4da69f432941d25c8, type: 3}
-  lenganIsOff: {fileID: 21300000, guid: c13b25a1f959aa243ab84b4ee3c7a9e1, type: 3}
-  manekinOnOffButton:
-  - {fileID: 2490053556379949584}
-  - {fileID: 26215215}
-  manekinIsOn: {fileID: 21300000, guid: e9e14969aa04fa64dbab272f32eb22e8, type: 3}
-  manekinIsOff: {fileID: 21300000, guid: 298c89208f7f38040974a6482f6312b6, type: 3}
-  JudulFavIsOn: {fileID: 1875955707}
-  JudulFavIsOff: {fileID: 1116465969707916211}
-  favoritIsOn: {fileID: 21300000, guid: 26f205e66995a85469da5d50ef4d373a, type: 3}
-  favoritIsOff: {fileID: 21300000, guid: d5f91082a4e8e8c40866ba9515b574d5, type: 3}
-  btnColorInstant: {fileID: 4341006482567969242}
-  btnManekinInstant: {fileID: 4341006481756741862}
-  btnDropDown: {fileID: 1542207905}
-  menuWarna: {fileID: 1269631830}
-  menuManekin: {fileID: 191502226}
 --- !u!1 &2037373226
 GameObject:
   m_ObjectHideFlags: 0
@@ -54128,7 +53683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102203343}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2079964493
 MonoBehaviour:
@@ -55948,7 +55503,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHANGE_FAVORITE_PAGE
         m_Mode: 2
@@ -57044,7 +56599,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -57176,7 +56731,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -57289,7 +56844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR_INSTANT
         m_Mode: 3
@@ -57931,7 +57486,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 256158572}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikPanelSlider, Assembly-CSharp
         m_MethodName: TOGGLE_PANEL
         m_Mode: 1
@@ -57943,7 +57498,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -57955,7 +57510,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_CLOSE
         m_Mode: 2
@@ -58331,7 +57886,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHANGE_FAVORITE_PAGE
         m_Mode: 2
@@ -58582,7 +58137,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR
         m_Mode: 3
@@ -58714,7 +58269,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR
         m_Mode: 3
@@ -58808,7 +58363,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CHOOSECOLOR
         m_Mode: 3
@@ -59305,7 +58860,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: DEPLOY
         m_Mode: 1
@@ -59407,7 +58962,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: SMALLPOP_MENU
         m_Mode: 2
@@ -60403,7 +59958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_MANEKIN
         m_Mode: 2
@@ -61515,7 +61070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036726719}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BatikListUI_Orginizer, Assembly-CSharp
         m_MethodName: CLOSE_DETAILWINDOW
         m_Mode: 1
@@ -61527,7 +61082,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: CANCEL_DEPLOY
         m_Mode: 1
@@ -61734,7 +61289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 456913114}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ModelPlacement, Assembly-CSharp
         m_MethodName: TOGGLE_LENGAN
         m_Mode: 2
