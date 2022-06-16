@@ -30,6 +30,7 @@ public class BatikDatabase : MonoBehaviour
     {
         public string name = "New Batik";
         public string deskripsi = "Description here...";
+        public string Harga = "Rp380.000";
         public string warnaDasar = "Biru, Merah, Hijau";
         public string ukuranTersedia = "S,M,L,XL";
         public string jenisKain = "Mori";

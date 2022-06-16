@@ -10,6 +10,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public RectTransform UIBajuDetailPanel; //UI Detail Baju
     public Text dpBatikName;
     public Text dpDeskripsi;
+    public Text dpHarga;
     public Image dpThumbnailBatik;
     
     public Button btInsta;
@@ -147,6 +148,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
         dpBatikName.text = batikBase.bajuListBaru[index].name; //Ngeupdate nama
         dpDeskripsi.text = batikBase.bajuListBaru[index].deskripsi + "\n\n\n" + "Warna Dasar \t : " + batikBase.bajuListBaru[index].warnaDasar + "\n Ukuran Tersedia \t : " + batikBase.bajuListBaru[index].ukuranTersedia + "\n Jenis Kain \t : "+ batikBase.bajuListBaru[index].jenisKain + "\n Asal Daerah \t : "+ batikBase.bajuListBaru[index].asalDaerah + "\n Teknik Produksi \t : "+ batikBase.bajuListBaru[index].teknikProduksi + "\n Cara Perawatan \t :"+ batikBase.bajuListBaru[index].caraPerawatan; //Ngeupdate detail untuk deskrpsi
+        dpHarga.text = batikBase.bajuListBaru[index].Harga;
         Debug.Log("rename dan deskripsi selesai");
         dpThumbnailBatik.sprite = batikBase.bajuListBaru[index].batikColorSets[0].thumbnail; //Ngeupdate detail untuk thumbnail
 

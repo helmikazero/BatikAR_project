@@ -571,6 +571,7 @@ MonoBehaviour:
       Jenis Kain : Mori  Asal Daerah : Jawa Tengah, Semarang Teknik Produksi : Batik
       Tulis  Cara Perawatan : Hindari penggunaan pemutih dalam mencuci kain karena
       dapat merusak bahan dari kain "
+    Harga: Rp100.000
     warnaDasar: Merah, Ungu, Kuning
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -600,6 +601,7 @@ MonoBehaviour:
       noLenganSet: {fileID: 0}
   - name: Batik Dinding
     deskripsi: Batik Dinding Merupakan Batik
+    Harga: Rp380.000
     warnaDasar: Putih
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -619,6 +621,7 @@ MonoBehaviour:
       noLenganSet: {fileID: 0}
   - name: Batik Bambu
     deskripsi: Batik Bambu Merupakan Batik
+    Harga: Rp380.000
     warnaDasar: Cokelat, Biru
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -643,6 +646,7 @@ MonoBehaviour:
       noLenganSet: {fileID: 0}
   - name: Batik Parang Kopi
     deskripsi: Bati Parang Kopi Adalah
+    Harga: Rp380.000
     warnaDasar: Cokelat, Biru
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -672,6 +676,7 @@ MonoBehaviour:
       noLenganSet: {fileID: 0}
   - name: Batik Monstera
     deskripsi: Batik Monstera
+    Harga: Rp380.000
     warnaDasar: Cokelat, Biru
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -701,6 +706,7 @@ MonoBehaviour:
       noLenganSet: {fileID: 0}
   - name: Batik Godhong Gedhang
     deskripsi: Bati Godhong Gedhang
+    Harga: Rp380.000
     warnaDasar: Cokelat, Biru
     ukuranTersedia: S, M, L, XL
     jenisKain: Katun
@@ -4355,7 +4361,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1957601104579356, guid: c36c2bcaeaeaea44cb8d5eeb6560c5bb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4065658806772206, guid: c36c2bcaeaeaea44cb8d5eeb6560c5bb, type: 3}
       propertyPath: m_RootOrder
@@ -7384,6 +7390,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1411133545417992, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4783076244365952, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7418,7 +7428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114961382245868814, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114961382245868814, guid: c2a81dba06fdc19449b44d7533c5106c, type: 3}
       propertyPath: ActiveControl
@@ -7437,7 +7447,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 772157261}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c761ac074d64224388d60d508467aeb, type: 3}
   m_Name: 
@@ -17095,6 +17105,7 @@ MonoBehaviour:
   UIBajuDetailPanel: {fileID: 2490053557016328029}
   dpBatikName: {fileID: 2490053555540986653}
   dpDeskripsi: {fileID: 2490053556018796048}
+  dpHarga: {fileID: 2490053555611670801}
   dpThumbnailBatik: {fileID: 2490053556911594526}
   btInsta: {fileID: 2490053556868249256}
   btWA: {fileID: 2490053555418030207}
