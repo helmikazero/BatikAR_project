@@ -33,10 +33,7 @@ public class BatikDatabase : MonoBehaviour
         public string Harga = "Rp380.000";
         public string warnaDasar = "Biru, Merah, Hijau";
         public string ukuranTersedia = "S,M,L,XL";
-        public string jenisKain = "Mori";
-        public string asalDaerah = "Jawa Tengah, Semarang";
         public string teknikProduksi = "Batik Tulis";
-        public string caraPerawatan = "Hindari penggunaan pemutih dalam mencuci kain karena dapat merusak bahan dari kain";
 
         public bool isFavorite;
 

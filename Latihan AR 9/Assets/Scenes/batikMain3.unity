@@ -532,52 +532,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bajuListBaru:
   - name: Batik Puskesmas
-    deskripsi: "Batik Puskesmas Merupakan Batik Semarang bukan hanya ibu kota provinsi,
-      tetapi juga menjadi salah satu wilayah metropolitan yang ada di Indonesia.
-      Tidak heran jika penduduk Semarang berasal dari latar budaya yang beragam.
-      Adapun etnis yang banyak ditemui di Semarang adalah Jawa, Tionghoa, dan Arab.
-      Batik warak ngendog konon dibuat sebagai lambang keberagaman budaya di Semarang.
-      Berasal dari kata wara\u2019 yang berarti suci, dan ngendog yang artinya bertelur.
-      Warak merupakan makhluk rekaan alias karangan yang wujudnya terbentuk dari
-      gabungan beberapa binatang. Kepala warak menyerupai kepala naga dalam budaya
-      Tionghoa. Badan warak merupakan gambaran dari badan buraq yang merupakan binatang
-      mitologi dari Timur Tengah. Serta kaki warak yang berjumlah empat diambil dari
-      kaki kambing yang melambangkan etnis Jawa. Warak ngendog juga merupakan nama
-      mainan anak yang dulu sangat populer di Semarang. Mainan warak biasa ditemui
-      saat dugderan. Dugderan merupakan festival rakyat yang diadakan di awal bulan
-      Ramadan. Warak digunakan untuk menyambut, memeriahkan, sekaligus sebagai media
-      dakwah. Warak ngendog memiliki bentuk sudut yang lurus. Sudut lurus warak memiliki
-      makna filosofis yang mendalam. Sudut lurus konon menggambarkan citra warga
-      Semarang   Warna Dasar : Biru, Merah, Hijau Ukuran Tersedia : S, M, L, XL 
-      Jenis Kain : Mori  Asal Daerah : Jawa Tengah, Semarang Teknik Produksi : Batik
-      Tulis  Cara Perawatan : Hindari penggunaan pemutih dalam mencuci kain karena
-      dapat merusak bahan dari kain  Semarang bukan hanya ibu kota provinsi, tetapi
-      juga menjadi salah satu wilayah metropolitan yang ada di Indonesia. Tidak heran
-      jika penduduk Semarang berasal dari latar budaya yang beragam. Adapun etnis
-      yang banyak ditemui di Semarang adalah Jawa, Tionghoa, dan Arab. Batik warak
-      ngendog konon dibuat sebagai lambang keberagaman budaya di Semarang. Berasal
-      dari kata wara\u2019 yang berarti suci, dan ngendog yang artinya bertelur.
-      Warak merupakan makhluk rekaan alias karangan yang wujudnya terbentuk dari
-      gabungan beberapa binatang. Kepala warak menyerupai kepala naga dalam budaya
-      Tionghoa. Badan warak merupakan gambaran dari badan buraq yang merupakan binatang
-      mitologi dari Timur Tengah. Serta kaki warak yang berjumlah empat diambil dari
-      kaki kambing yang melambangkan etnis Jawa. Warak ngendog juga merupakan nama
-      mainan anak yang dulu sangat populer di Semarang. Mainan warak biasa ditemui
-      saat dugderan. Dugderan merupakan festival rakyat yang diadakan di awal bulan
-      Ramadan. Warak digunakan untuk menyambut, memeriahkan, sekaligus sebagai media
-      dakwah. Warak ngendog memiliki bentuk sudut yang lurus. Sudut lurus warak memiliki
-      makna filosofis yang mendalam. Sudut lurus konon menggambarkan citra warga
-      Semarang   Warna Dasar : Biru, Merah, Hijau Ukuran Tersedia : S, M, L, XL 
-      Jenis Kain : Mori  Asal Daerah : Jawa Tengah, Semarang Teknik Produksi : Batik
-      Tulis  Cara Perawatan : Hindari penggunaan pemutih dalam mencuci kain karena
-      dapat merusak bahan dari kain "
-    Harga: Rp100.000
+    deskripsi: Dirancang untuk tenaga kesehatan di kabupaten semarang. Batik ini
+      tidak mengandung filosifi yang rumit. Batik ini menggambarkan apa yang ada
+      dikehidupan sehari-hari para penggunanya di tenaga kesehatan. Maka simbol stetoskop
+      yang besar itu adalah menunjukkan peralatan pekerjaan mereka dan juga mengandung
+      arti diagnosa sebagai langkah awal mereka untuk melakukan pekerjaan dengan
+      benar. Kemudian ada segala macam obat untuk menggambarkan pemilihan terapi
+      yang benar sehingga diharapkan mereka dapat mengerjakan tugas/ pekerjaan secara
+      profesional berdasarkan diagnosa yang ada dengan teknik pengobatan/ penyelesaian
+      masalah yang tepat. Selain itu warna hijau ditepi ujung lengan dan bawah pakaian
+      melambangkan kesejukan yang melambangkan bahwa tenaga kerja dari kesehatan
+      dapat membawakan kesejukan baik raga dan jiwa penggunanya. Sehingga diharapkan
+      pengguna dapat memberikan pelayanan yang dapat menyejukkan pasien yang sedang
+      sakit.
+    Harga: Rp 250.000
     warnaDasar: Merah, Ungu, Kuning
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1123588337}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -599,15 +570,25 @@ MonoBehaviour:
       kerahForManekin: {fileID: 0}
       withLenganSet: {fileID: 0}
       noLenganSet: {fileID: 0}
-  - name: Batik Dinding
-    deskripsi: Batik Dinding Merupakan Batik
-    Harga: Rp380.000
+  - name: Batik Ceplok Melati
+    deskripsi: Mengandung filosifi keindahan dan keharuman jadi motif ini biasa digunakan
+      baik sebagai motif utama batik maupun motif kombinasi/ motif tambahan pada
+      batik. Pada motif ini dengan variasi polanya ceplok. Filosofi yang diharapkan
+      adalah motif ceplok melati ini membuat pemakainya dapat memberikan keharuman
+      serta memiliki keindahan bukan hanya motif batiknya namun juga sifat pemakainya
+      sebagaimana melati selalu digunakan pada kegiatan-kegiatan yang baik khususnya
+      bagi orang-orang Jawa dan orang-orang Indonesia. Makna penting Bunga Melati
+      Putih dalam budaya Indonesia sudah dikenal sejak dahulu. Bunga Melati Putih
+      dikenal sebagai Bunga Suci .Pada kain batik biasanya berbagai bunga dirangkai
+      menjadi satu seperti Pola dalam motif batik wahyu tumurun memiliki makna serta
+      filosofi tertentu.  Selain itu melati menggambarkan kesucian serta ketulusan
+      dan juga keanggunan dalam kesederhanaan, sehingga diharapkan penggunanya memiliki
+      ketulisan hati serta sikap yang sederhana dalam bertindak yang dapat menunjukkan
+      keanggunan bagi pengguna batik ini.
+    Harga: Rp 275.000
     warnaDasar: Putih
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1744074815}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -619,15 +600,23 @@ MonoBehaviour:
       kerahForManekin: {fileID: 0}
       withLenganSet: {fileID: 0}
       noLenganSet: {fileID: 0}
-  - name: Batik Bambu
-    deskripsi: Batik Bambu Merupakan Batik
-    Harga: Rp380.000
-    warnaDasar: Cokelat, Biru
+  - name: Batik Pring
+    deskripsi: Batik motif pring mengandung filosofi seperti pohon bambu/ bambu yang
+      bermanfaat bagi semua perikehidupan manusia sedemikian juga pada motif batik
+      pring itu diharapkan pemakainya bermanfaat bagi lingkungan sekitar dan dalam
+      hal apapun sebagaimana bambu dapat bermanfaat dalam hal apapun. Yang kedua
+      pring/ bambu mengandung filosofi kekokohan, motif ini diharapkan pemakainya
+      memiliki sifat dan hati yang kokoh dan tidak putus asa seperti bambu yang tidak
+      mudah busuk. Selain itu Bambu adalah tanaman yang berlimpah di Asia dan tumbuh
+      sangat cepat. Bambu tumbuh fleksibel dan mudah beradaptasi. Karena bambu tidak
+      berbunga atau berbuah, umur tanaman ini panjang dan tampil sederhana. Karena
+      berongga, bambu juga melambangkan hati yang kosong dari kerendahan hati. Fleksibilitas
+      pohon bambu mengajarkan kepada kita sebuah sikap hidup yang berpijak pada keteguhan
+      hati dalam menjalani hidup walaupun badai dan topan menerpa kita / penggunanya.
+    Harga: Rp 310.000
+    warnaDasar: Cokelat, Putih
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1443273115}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -645,14 +634,21 @@ MonoBehaviour:
       withLenganSet: {fileID: 0}
       noLenganSet: {fileID: 0}
   - name: Batik Parang Kopi
-    deskripsi: Bati Parang Kopi Adalah
-    Harga: Rp380.000
-    warnaDasar: Cokelat, Biru
+    deskripsi: Dasarnya adalah motif parang. Parang menunjukkan struktural/ jabatan.
+      Kenapa parang diganti menjadi kembang kopi adalah local wisdom kita. Kembang
+      kopi dalam masyarakat gemawang sebagai simbol harapan. Ketika kopi berbunga
+      itu masyarakat sudah memiliki harapan akan sebuah kemakmuran. Biji kopi pada
+      rangkaian parang itu menunjukkan kemakmuran sendiri. Filososif batik ini adalah
+      harapan dan kemakmuran pada sebuah tatanan yang teratur jadi mengandung makna
+      diharapkan para pemakainya mempunyai harapan yang tinggi/ cita-cita yang memakmurkan
+      serta memiliki tatanan hidup yang teratur. Kopi sendiri digambar sebagai suatu
+      biji minuman yang dapat menyegarkan , memiliki keharuman dan kenikmatan sendiri
+      ketika diseduh. Sehingga diharapkan penggunanya dapat terlihat lebih segar,
+      terkesan harum, dan nikmat ketika dipandang ketika menggunakan batik ini
+    Harga: Rp 295.000
+    warnaDasar: Hitam, Cokelat, Merah
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 436404902}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -675,14 +671,22 @@ MonoBehaviour:
       withLenganSet: {fileID: 0}
       noLenganSet: {fileID: 0}
   - name: Batik Monstera
-    deskripsi: Batik Monstera
-    Harga: Rp380.000
-    warnaDasar: Cokelat, Biru
+    deskripsi: Monstera pada daun yang dibuat pada motif batik ini dalam bahasa Jawa
+      disebut Ron Bolong atau Ron Do Bolong atau daun yang berlubang. Dijadikan motif
+      batik karena keunikan dan keindahan. Kenapa Ron Do Bolong yang dipilih dari
+      sekian banyak daun dan bunga yang ada karena daun ini memiliki filosofi keunikan
+      atau keindahan. Selain menjadi tren beberapa saat yang lalu sehingga mudah
+      tenar motif yang dibuat ini, kita juga ingin memfilosofikan bahwa setiap pribadi
+      itu unik dan dalam setiap keunikan pasti keindahan. Yang kita harapkan adalah
+      motif ini menjadi simbol bagi pemakainya bahwa dirinya adalah pribadi yang
+      uni kdan dalam setiap keunikan yang dia miliki memiliki keindahaan yang dapat
+      dipandang. Sayang sekali Ron Do Bolong diterjemahkan ke bahasa Indonesia yang
+      salah menjadi janda bolong. Keunikan dan keindahan inilah yang menjadikan ron
+      do bolong untuk diangkat menjadi salah satu motif batik gemawang
+    Harga: Rp 375.000
+    warnaDasar: Hitam, Merah, Hijau
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 2129458602}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -705,14 +709,23 @@ MonoBehaviour:
       withLenganSet: {fileID: 0}
       noLenganSet: {fileID: 0}
   - name: Batik Godhong Gedhang
-    deskripsi: Bati Godhong Gedhang
-    Harga: Rp380.000
-    warnaDasar: Cokelat, Biru
+    deskripsi: Motif ini tampaknya sederhana tetapi dijadikan sebuah motif karena
+      godhong gedhang/ daun pisang dapat ditemukan sehari-hari. Namun walaupun kita
+      sering memakai daun pisang dalam setiap kesempatan kita tidak menyadari bhawa
+      daun pisang ini bermanfaat untuk banyak hal bagi kehidupan kita sehari-hari.
+      Yang ingin diangkat adalah daun pisang yang sering digunakan di masyarakat
+      dalam kehidupan sehari-hari. Yang diharapkan adalah penggunanya bisa seperti
+      daun pisang yang dapat bermanfaat bagi orang lain bagi lingkungannya dalam
+      beberapa posisi. Daun pisang ini bahkan dapat dimanfaatkan sampai daun yang
+      tua/ yang kering sekalipun. Begitu juga dalam kehidupan manusia mau yang tua
+      atau yang muda itu harus bisa bermanfaat bagi kehidupan orang lain bagi masyarakat
+      pada umumnya pada berbagai posisi persis seperti daun pisang yang dapat menyesuaikan
+      kapan dia keras kapan dia lentur. Filosofi yang diharapkan adalah penyuka/
+      pemakai motif ini mampu membuat dirinya bermanfaat bagi lingkungan sekitarnya.
+    Harga: Rp 355.000
+    warnaDasar: Hitam, Hijau Muda, Hijau Tua
     ukuranTersedia: S, M, L, XL
-    jenisKain: Katun
-    asalDaerah: Semarang
     teknikProduksi: Cetak
-    caraPerawatan: DIgerus
     isFavorite: 0
     batikMotifObjects: {fileID: 1594411320}
     linkInstagram: https://www.instagram.com/batikgemawangofficial/
@@ -3326,8 +3339,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 199170262}
   m_HandleRect: {fileID: 199170261}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.5
+  m_Size: 0.64668787
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20854,7 +20867,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b9ee4072a70a7714e962858664ca1f58, type: 3}
-    m_FontSize: 26
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
