@@ -18,7 +18,7 @@ public class TutorialSequenceManager : MonoBehaviour
 
     public SequenceUnit[] tutorialSequence;
 
-   
+    public string LinkPDF;
 
     public int currentSequenceIndex;
 
@@ -176,5 +176,9 @@ public class TutorialSequenceManager : MonoBehaviour
    
     }
 
-
+    public void OpenPDF()
+    {
+        Application.OpenURL(LinkPDF);
+    }
 }
+
