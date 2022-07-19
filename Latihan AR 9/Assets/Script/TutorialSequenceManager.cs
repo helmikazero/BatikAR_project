@@ -18,6 +18,8 @@ public class TutorialSequenceManager : MonoBehaviour
 
     public SequenceUnit[] tutorialSequence;
 
+   
+
     public int currentSequenceIndex;
 
     public Transform TutorialPopUp;
@@ -171,8 +173,8 @@ public class TutorialSequenceManager : MonoBehaviour
                 TutorialPopUp.GetChild(i).GetChild(3).GetComponent<Image>().sprite = ImageAudioOn;
             }
         }
-
-
-           
+   
     }
+
+
 }
