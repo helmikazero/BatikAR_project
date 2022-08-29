@@ -217,7 +217,8 @@ public class ModelPlacement : MonoBehaviour
     public void PopUp_NamaBatik()
     {
         ImgPopUpNama.gameObject.SetActive(true);
-        
+        /*ImgPopUpNama.DOScale(1f, )*/
+        /*PeringatanPopUp.GetComponent<CanvasGroup>().DOFade(1f, durationMove).From(0f);*/
     }
 
 }
