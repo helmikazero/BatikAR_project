@@ -35,6 +35,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public GameObject ColorSelectionButtonPrefab; //Template Tombol Warna
     public RectTransform PeringatanPopUp;
     public GameObject PeringatanFav0;
+    public Text NamaVT; //Nama Untuk Disetiap Model Batik
     
 
     [Header("Window Animation")]
@@ -190,7 +191,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
 
 
         OPEN_DETAILPANEL();
-
+        
         
     }
 
@@ -452,7 +453,7 @@ public class BatikListUI_Orginizer : MonoBehaviour
         modelPlacement.UPDATE_BATIK();
         menudropdown.TOGGLE_DROP();
         SmallPOP_Menu_Controller();
-        
+        modelPlacement.ImgPopUpNama.gameObject.SetActive(false);
     }
 
 
@@ -505,5 +506,10 @@ public class BatikListUI_Orginizer : MonoBehaviour
     public void SetNonActiveObject (GameObject Button)
     {
         Button.gameObject.SetActive(false);
+    }
+
+    public void NamaMenuUtama()
+    {
+        NamaVT.text = batikBase.bajuListBaru[modelPlacement.selectedBatik].name;
     }
 }

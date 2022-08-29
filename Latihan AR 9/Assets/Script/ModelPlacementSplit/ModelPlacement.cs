@@ -8,7 +8,7 @@ public class ModelPlacement : MonoBehaviour
 {
     public GameObject modelSpotAll;
     public Transform modelSpot;
-
+    public RectTransform ImgPopUpNama; //Untuk Nama Batik di Menu Utama
 
 
     public int selectedBatik = 0;
@@ -114,7 +114,7 @@ public class ModelPlacement : MonoBehaviour
 
         batikListOrginizer.CLOSE_DETAILWINDOW();
         batikListOrginizer.CLOSE_LISTWINDOW();
-
+        PopUp_NamaBatik();
     }
     // Mengatur UI Lengan pada Batik Detail Panel
     public void TOGGLE_LENGAN(Image thebutton)
@@ -172,6 +172,8 @@ public class ModelPlacement : MonoBehaviour
 
         batikListOrginizer.SET_TOGGLEMANEKIN_COLOR();
         batikListOrginizer.SET_TOGGLELENGAN_COLOR();
+
+        batikListOrginizer.NamaMenuUtama();
     }
 
     // Mengatur kembali batik yang sudah diklik namun tidak jadi di deploy / dimunculkan
@@ -212,6 +214,10 @@ public class ModelPlacement : MonoBehaviour
         modelSpotAll.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);  
     }
 
-    
+    public void PopUp_NamaBatik()
+    {
+        ImgPopUpNama.gameObject.SetActive(true);
+        
+    }
 
 }
